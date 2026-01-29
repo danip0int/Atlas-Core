@@ -42,10 +42,11 @@ body::before {
   inset: 0;
   background-image: url("../assets/noise2.png");
   background-repeat: repeat;
-  opacity: 0.3;
+  opacity: 0.09;
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
 }
+
 
 .header {
   background-color: var(--color-text-main);
@@ -56,9 +57,14 @@ body::before {
 /*SECCION NAVBAR*/
 
 .navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1050;
   background: var(--color-bg-main) !important;
   backdrop-filter: blur(8px);
 }
+
 .navbar .container-fluid {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -83,7 +89,7 @@ body::before {
   margin-left: 1rem;
 }
 .navbar-nav .nav-link {
-  position: relative; /* NECESARIO para ::after */
+  position: relative; 
   padding: 0.6rem 1.1rem;
   border-radius: 18px;
   font-size: 0.9rem;
@@ -118,8 +124,8 @@ body::before {
   background: rgba(255, 255, 255, 0.12);
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18);
 }
-.navbar-nav .navbar-link.active::after {
-  width: 100%;
+.navbar-nav .nav-link.active::after {
+  width: 76%;
 }
 
 .nav-social {
@@ -137,9 +143,7 @@ body::before {
   opacity: 1;
   color: var(--color-accent);
 }
-main {
-  padding-top: 100px;
-}
+
 /*SECCION CARRUSEL*/
 
 .carousel-item {
@@ -237,38 +241,33 @@ main {
   transition: transform 0.4s ease;
 }
 .card {
+  position: relative;
   background: var(--color-bg-card);
   color: var(--color-text-main);
   border-radius: 18px;
   overflow: hidden;
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.45),
+    0 0 0 1px rgba(255,255,255,0.04);
   transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+    transform 0.35s cubic-bezier(.4,0,.2,1),
+    box-shadow 0.35s ease;
 }
 
 .card:hover {
   transform: translateY(-6px);
-   box-shadow:
-    0 18px 40px rgba(0,0,0,0.55),
-    0 0 0 1px rgba(255,255,255,0.08);
+  box-shadow:
+    0 20px 45px rgba(0,0,0,0.6),
+    0 0 0 10px rgba(235, 94, 40, 0.45);
 
 }
 .card-wrapper {
-  border-radius: 18px;
-  box-shadow:
-    0 12px 30px rgba(0,0,0,0.55),
-    0 0 0 1px rgba(255,255,255,0.05);
-  transition: box-shadow 0.3s ease;
-}
-
-.card-wrapper:hover {
-  box-shadow:
-    0 18px 40px rgba(0,0,0,0.65),
-    0 0 0 1px rgba(255,255,255,0.1);
+  height: 100%;
 }
 .card:hover .card-img-top {
   transform: scale(1.05);
 }
+
 /*SECCION VIDEOS*/
 
 video {
@@ -290,16 +289,38 @@ video {
 /*SECCION FOOTER*/
 
 .footer {
-  background: var(--color-bg-main);
-  color: var(--color-text-main);
-  margin-top: 4rem;
-  padding: 4rem 0 2.5rem;
+  position: relative;
+  z-index: 1;
+  background: var(--carbon-black);
+  color: var(--floral-white);
+  margin-top: 3rem;
+  padding-top: 3.5rem;
+  padding-bottom: 2.5rem;
   border-top: 1px solid rgba(255,255,255,0.06);
+}
+.contacto-footer p {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.footer .row > div{
+  position: relative;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.footer .row > div:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: 0;
+  height: 80%;
+  width: 1px;
+  background: rgba(255,255,255,0.08);
 }
 
 .footer h3 {
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 700;
+  font-size: 1.1rem;
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 1rem;
@@ -310,12 +331,9 @@ video {
 .logo-footer {
   margin-top: 2rem;
 }
-.redes-footer {
-  margin-top: 1rem;
-}
 .footer p {
   font-size: 0.9rem;
-  color: var(--color-text-muted);
+  color: var(--dust-grey);
   line-height: 1.6;
 }
 .footer a {
@@ -329,21 +347,27 @@ video {
 }
 .footer-divisor {
   height: 1px;
+  width: 100%;
   background: linear-gradient(
     to right,
     transparent,
-    rgba(255,255,255,0.08),
+    rgba(255,255,255,0.12),
     transparent
-  );
-  margin: 1rem 0;
-}
-.footer .nav-icon {
+    );
+    margin-bottom: 3rem;
+  }
+  .redes-footer {
+    margin-top: 1rem;
+  }
+.footer-icon {
   font-size: 1.4rem;
-  color: var(--color-text-muted);
+  color: var(--dust-grey);
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
-.footer .nav-icon:hover {
-  color: var(--color-accent);
+.footer-icon:hover {
+  color: var(--spicy-paprika);
+  transform: translateY(-2px);
 }
 
 .principal {
@@ -351,96 +375,88 @@ video {
   margin: 0 auto;
   padding: 2rem;
 }
-.principal h2 {
-  margin-bottom: 2rem;
+
+/*SECCIÓN TITULOS*/
+
+.section-title {
+  margin: 4rem 0 2.5rem;
 }
-.titulos-index {
+
+.section-title h2 {
+  font-size: 2rem;
+  font-weight: 700;
   position: relative;
-  padding: 0 2rem;
-}
-.titulos-index h2 {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  text-align: left;
+  display: inline-block;
+  padding-bottom: 0.6rem;
 }
 
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-h2 {
-  font-size: 1.8;
-  margin-bottom: 0.8rem;
-}
-.titulos-index::before,
-.titulos-index::after {
+.section-title h2::after {
   content: "";
   position: absolute;
-  top: 50%;
-  width: 400px;
-  height: 2px;
-  background-color: #ccc;
+  left: 0;
+  bottom: 0;
+  width: 48px;
+  height: 3px;
+  background-color: var(--spicy-paprika);
+  border-radius: 2px;
+}
+.title-center {
+  text-align: center;
+}
+.title-center h2::after {
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.titulos-index::before {
-  left: calc(50% - 160px);
-}
-.titulos-index::after {
-  right: calc(50% - 160px);
-}
 
 /* ENTRENAMIENTO PAGE*/
 
 .img-entreno {
   width: 100%;
-  height: 420px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.img-entreno-wide {
-  width: 100%;
-  height: 360px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.img-entreno,
-.img-entreno-wide {
-  width: 100%;
+  max-width: 680px; 
+  height: 320px;
   object-fit: cover;
   border-radius: 8px;
   position: relative;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.74);
-  transition: box-shadow 0.2s ease;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
 }
 
 .img-1 {
   z-index: 1;
 }
+
 .img-2 {
   margin-top: -140px;
   z-index: 2;
 }
+
 .img-3 {
   margin-top: -100px;
   z-index: 3;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.548);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
 }
+
+.img-entreno:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.75);
+}
+
+.img-entreno::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.15),
+    rgba(0,0,0,0.35)
+  );
+  pointer-events: none;
+}
+
 
 /*SECCIÓN DISCIPLINAS*/
-
-.titulo-disciplinas h2 {
-  font-weight: 600;
-}
-
-.linea-separadora {
-  width: 80px;
-  height: 2px;
-  background-color: #999;
-  margin: 12px auto 0;
-}
 
 .disciplina-card {
   height: 220px;
@@ -452,29 +468,33 @@ h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: blur(1.5px);
+  filter: blur(1.1px);
   transform: scale(1.05);
   transition:
     transform 0.4s ease,
     filter 0.4s ease;
 }
 .disciplina-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.45);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.55)
+  );
 }
+
 .disciplina-card .card-title {
   position: relative;
   z-index: 2;
   font-weight: 600;
   letter-spacing: 1px;
+  text-shadow: 0 4px 14px rgba(235, 94, 40, 0.35);
 }
 
 .disciplina-card:hover img {
   filter: blur(0);
   transform: scale(1.1);
 }
+
 
 .disciplina-card:hover::after {
   background-color: rgba(0, 0, 0, 0.25);
