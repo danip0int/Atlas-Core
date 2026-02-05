@@ -1,0 +1,20 @@
+
+@mixin respond-max($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin soft-shadow($blur: 30px, $opacity: 0.4) {
+  box-shadow: 0 12px $blur rgba(0, 0, 0, $opacity);
+}
+
+@mixin hover-lift($y: -6px, $scale: 1.02) {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY($y) scale($scale);
+  }
+}
+
+

@@ -56,7 +56,7 @@ html::before {
   padding-bottom: 0.5rem;
 }
 
-/*SECCION NAVBAR*/
+/*SECCION NAVBAR
 
 .navbar {
   position: fixed;
@@ -146,6 +146,10 @@ html::before {
   opacity: 1;
   color: var(--color-accent);
 }
+
+*/
+
+
 
 /*SECCION CARRUSEL*/
 

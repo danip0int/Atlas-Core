@@ -1,0 +1,28 @@
+
+:root {
+  --floral-white: #fffcf2;
+  --dust-grey: #ccc5b9;
+  --charcoal-brown: #403d39;
+  --carbon-black: #111110;
+  --spicy-paprika: #eb5e28;
+
+  --color-bg-main: var(--carbon-black);
+  --color-bg-card: var(--charcoal-brown);
+  --color-bg-soft: #2c2b28;
+
+  --color-text-main: var(--floral-white);
+  --color-text-muted: var(--dust-grey);
+  --color-overlay-dark: rgba(37, 36, 34, 0.45);
+
+  --color-accent: var(--spicy-paprika);
+}
+
+
+$container-max: 1600px;
+$radius-sm: 8px;
+$radius-md: 16px;
+$radius-lg: 28px;
+
+$transition-fast: 0.25s ease;
+$transition-base: 0.35s ease;
+

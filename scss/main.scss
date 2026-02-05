@@ -1,0 +1,31 @@
+
+@use "base/reset";
+@use "base/variables";
+@use "base/tipografia";
+
+/* === UTILIDADES === */
+
+@use "utils/mixins";
+@use "utils/breakpoints";
+
+/* === LAYOUT === */
+
+@use "layout/navbar";
+@use "layout/footer";
+@use "layout/sections";
+
+/* === COMPONENTES === */
+
+@use "components/buttons";
+@use "components/cards";
+@use "components/carousel";
+@use "components/videos";
+
+/* === PÁGINAS === */
+
+@use "page/index";
+@use "pages/entrenamientos";
+@use "pages/instalaciones";
+@use "pages/membresias";
+@use "pages/contacto";
+
