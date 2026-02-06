@@ -3,29 +3,36 @@
 @use "base/variables";
 @use "base/tipografia";
 
-/* === UTILIDADES === */
-
+/* === UTILIDADES ===
 @use "utils/mixins";
 @use "utils/breakpoints";
+*/
 
-/* === LAYOUT === */
 
-@use "layout/navbar";
+/* === LAYOUT === 
 @use "layout/footer";
 @use "layout/sections";
+*/
 
-/* === COMPONENTES === */
+@use "layout/navbar";
 
+
+/* === COMPONENTES ===
 @use "components/buttons";
 @use "components/cards";
 @use "components/carousel";
 @use "components/videos";
+*/
 
-/* === PÁGINAS === */
 
+
+/* === PÁGINAS ===
 @use "page/index";
 @use "pages/entrenamientos";
 @use "pages/instalaciones";
 @use "pages/membresias";
 @use "pages/contacto";
+*/
+
+
 

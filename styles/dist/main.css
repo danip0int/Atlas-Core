@@ -1,0 +1,175 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  position: relative;
+  color: var(--color-text-main);
+  overflow-x: hidden;
+  background: transparent;
+}
+
+html {
+  background: var(--color-bg-main);
+  position: relative;
+}
+
+html::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("../assets/noise2.png");
+  background-repeat: repeat;
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.header {
+  background-color: var(--color-text-main);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+:root {
+  --floral-white: #fffcf2;
+  --dust-grey: #ccc5b9;
+  --charcoal-brown: #403d39;
+  --carbon-black: #111110;
+  --spicy-paprika: #eb5e28;
+  --color-bg-main: var(--carbon-black);
+  --color-bg-card: var(--charcoal-brown);
+  --color-bg-soft: #2c2b28;
+  --color-text-main: var(--floral-white);
+  --color-text-muted: var(--dust-grey);
+  --color-overlay-dark: rgba(37, 36, 34, 0.45);
+  --color-accent: var(--spicy-paprika);
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+}
+
+/* === UTILIDADES ===
+@use "utils/mixins";
+@use "utils/breakpoints";
+*/
+/* === LAYOUT === 
+@use "layout/footer";
+@use "layout/sections";
+*/
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1050;
+  background: var(--color-bg-main) !important;
+  backdrop-filter: blur(8px);
+}
+
+.navbar .container-fluid {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: var(--color-text-main);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: var(--color-accent);
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+  color: var(--color-text-main);
+  font-weight: 600;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  color: var(--color-text-main);
+}
+
+.navbar-nav.nav-item {
+  margin-left: 1rem;
+}
+
+.navbar-nav .nav-link {
+  position: relative;
+  padding: 0.8rem 1.3rem;
+  border-radius: 18px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.06);
+  margin-left: 0.5rem;
+  transition: color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 12%;
+  bottom: 6px;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-accent);
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  background: rgba(255, 252, 242, 0.06);
+  transform: translateY(-1px);
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 76%;
+}
+
+.navbar-nav .nav-link.active {
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+.navbar-nav .nav-link.active::after {
+  width: 76%;
+}
+
+.nav-social {
+  margin-left: 1rem;
+}
+
+.nav-icon {
+  color: var(--color-text-main);
+  font-size: 1.5rem;
+  opacity: 0.8;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.nav-icon:hover {
+  opacity: 1;
+  color: var(--color-accent);
+}
+
+/* === COMPONENTES ===
+@use "components/buttons";
+@use "components/cards";
+@use "components/carousel";
+@use "components/videos";
+*/
+/* === PÁGINAS ===
+@use "page/index";
+@use "pages/entrenamientos";
+@use "pages/instalaciones";
+@use "pages/membresias";
+@use "pages/contacto";
+*/
+
+/*# sourceMappingURL=main.css.map */
