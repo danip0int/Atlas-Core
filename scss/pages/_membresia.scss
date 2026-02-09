@@ -1,0 +1,256 @@
+
+.membresias {
+  padding: 6rem 0;
+
+  &-header {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: var(--color-muted);
+    }
+  }
+
+  .planes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .plan-card {
+    width: 380px;
+    background: var(--color-bg-card);
+    color: var(--color-text);
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    text-align: center;
+    transition:
+      transform 0.35s ease,
+      box-shadow 0.35s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .plan-header {
+      min-height: 70px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      margin-bottom: 1.5rem;
+
+      h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.25rem;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 0.6rem;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          width: 40px;
+          height: 2px;
+          background: linear-gradient(
+            90deg,
+            transparent,
+            var(--color-accent),
+            transparent
+          );
+          transform: translateX(-50%);
+          box-shadow: 0 0 8px rgba(235, 94, 40, 0.6);
+        }
+      }
+
+      .elegido {
+        display: inline-block;
+        padding: 0.3rem 0.8rem;
+        font-size: 0.75rem;
+        border-radius: 999px;
+        background: var(--color-accent);
+        color: #fff;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .plan-precio {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin: 1.5rem 0;
+
+      span {
+        font-size: 0.9rem;
+        color: var(--color-muted);
+      }
+    }
+
+    .plan-list {
+      margin-top: 1.5rem;
+      padding: 0;
+      list-style: none;
+      text-align: left;
+
+      li {
+        margin-bottom: 0.5rem;
+        color: var(--color-muted);
+        position: relative;
+        padding-left: 1.2rem;
+
+        &::before {
+          content: "•";
+          position: absolute;
+          left: 0;
+          color: var(--color-accent);
+          font-size: 1.2rem;
+          line-height: 1;
+        }
+      }
+    }
+
+    .btn-plan {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.8rem;
+      border-radius: 999px;
+      background: var(--color-accent);
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+      box-shadow: 0 8px 20px rgba(235, 94, 40, 0.35);
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 30px rgba(235, 94, 40, 0.45);
+      }
+    }
+
+    &.plan-destacado {
+      background: linear-gradient(180deg, #1f1f1f, #0f0f0f);
+      transform: scale(1.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 2;
+      padding: 3.2rem 2.2rem;
+      padding-top: 2.5rem;
+      box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(235, 94, 40, 0.25);
+
+      &:hover {
+        transform: scale(1.075) translateY(-6px);
+      }
+
+      .plan-header h3::after {
+        width: 48px;
+        height: 3px;
+      }
+
+      .btn-plan {
+        background: #fff;
+        color: #111;
+
+        &:hover {
+          background: #f1f1f1;
+        }
+      }
+    }
+  }
+}
+
+/*SECCIÓN BENEFICIOS*/
+
+.beneficios {
+  position: relative;
+  padding: 6rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.02),
+      rgba(0, 0, 0, 0)
+    );
+    pointer-events: none;
+  }
+
+  &-header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: var(--color-muted);
+    }
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+  }
+
+  .beneficio-item {
+    padding: 1.5rem 1.2rem;
+    border-radius: 16px;
+    transition:
+      transform 0.3s ease,
+      background 0.3s ease,
+      opacity 0.3s ease;
+
+    i {
+      display: inline-block;
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+      color: var(--color-accent);
+      opacity: 0.85;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--color-text-main);
+
+      &::after {
+        content: "";
+        display: block;
+        width: 18px;
+        height: 2px;
+        margin-top: 0.4rem;
+        background: var(--color-accent);
+        opacity: 0.7;
+      }
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: var(--color-muted);
+      line-height: 1.5;
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.03);
+      opacity: 0.9;
+    }
+  }
+}
