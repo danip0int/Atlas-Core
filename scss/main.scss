@@ -4,35 +4,37 @@
 @use "base/tipografia";
 
 /* === UTILIDADES ===
-@use "utils/mixins";
 @use "utils/breakpoints";
 */
 
+@use "utils/mixins";
 
 /* === LAYOUT === 
-@use "layout/footer";
-@use "layout/sections";
+@use "layout/sections;
 */
 
 @use "layout/navbar";
+@use "layout/footer";
 
 
 /* === COMPONENTES ===
 @use "components/buttons";
-@use "components/cards";
-@use "components/carousel";
-@use "components/videos";
+
 */
 
-
+@use "components/section-title";
+@use "components/carousel";
+@use "components/cards";
+@use "components/videos";
+@use "components/disciplinas";
 
 /* === PÁGINAS ===
 @use "page/index";
-@use "pages/entrenamientos";
 @use "pages/instalaciones";
 @use "pages/membresias";
 @use "pages/contacto";
 */
 
+@use "pages/entrenamiento";
 
 

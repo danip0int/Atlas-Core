@@ -1,9 +1,27 @@
 
-@mixin respond-max($breakpoint) {
-  @media (max-width: $breakpoint) {
+
+$bp-desktop: 1400px;
+$bp-tablet: 992px;
+$bp-mobile: 576px;
+
+@mixin desktop-break {
+  @media (max-width: $bp-desktop) {
     @content;
   }
 }
+
+@mixin tablet-break {
+  @media (max-width: $bp-tablet) {
+    @content;
+  }
+}
+
+@mixin mobile-break {
+  @media (max-width: $bp-mobile) {
+    @content;
+  }
+}
+
 
 @mixin soft-shadow($blur: 30px, $opacity: 0.4) {
   box-shadow: 0 12px $blur rgba(0, 0, 0, $opacity);
@@ -18,3 +36,13 @@
 }
 
 
+@mixin underline($width: 48px, $height: 3px, $color: var(--spicy-paprika)) {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: $width;
+  height: $height;
+  background-color: $color;
+  border-radius: 2px;
+}

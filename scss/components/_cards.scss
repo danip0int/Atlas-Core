@@ -1,0 +1,60 @@
+
+@use "../utils/mixins" as *;
+
+.card-wrapper {
+  height: 100%;
+}
+
+.card {
+  position: relative;
+  background: var(--color-bg-card);
+  color: var(--color-text-main);
+  border-radius: 22px;
+  overflow: hidden;
+  min-height: 520px;
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+
+  transition:
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.35s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow:
+      0 20px 45px rgba(0, 0, 0, 0.6),
+      0 0 0 10px rgba(235, 94, 40, 0.45);
+
+    .card-img-top {
+      transform: scale(1.05);
+    }
+  }
+
+  .card-img-top {
+    height: 320px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+/*RESPONSIVE*/
+
+  @include tablet-break {
+    min-height: 480px;
+
+    .card-img-top {
+      height: 280px;
+    }
+  }
+
+
+  @include mobile-break {
+    min-height: auto; 
+    
+    .card-img-top {
+      height: 220px;
+    }
+  }
+}
+

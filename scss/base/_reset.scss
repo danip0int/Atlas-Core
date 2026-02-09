@@ -26,7 +26,7 @@ html::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: url("../assets/noise2.png");
+  background-image: url("/assets/noise2.png");
   background-repeat: repeat;
   opacity: 0.25;
   pointer-events: none;

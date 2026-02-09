@@ -1,0 +1,135 @@
+
+@use "../utils/mixins" as *;
+
+.entrenamiento-wrapper {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.img-entreno {
+  width: 100%;
+  max-width: 800px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+  position: relative;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.3s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.35)
+    );
+    pointer-events: none;
+  }
+
+  &:hover {
+    transform: translateY(-8px) scale(1.015);
+    box-shadow: 0 26px 60px rgba(0, 0, 0, 0.8);
+  }
+
+ 
+  &.img-1 {
+    z-index: 1;
+  }
+
+  &.img-2 {
+    margin-top: -120px;
+    z-index: 2;
+  }
+
+  &.img-3 {
+    margin-top: -90px;
+    z-index: 3;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+  }
+}
+
+/*SECCIÓN DISCIPLINAS*/
+
+
+
+/*RESPONSIVE*/
+
+@include tablet-break {
+
+  .entrenamientos {
+    .row {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 3.5rem;
+    }
+
+    h3 {
+      margin-top: 1.4rem;
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+      margin: 0.6rem auto 0;
+      max-width: 480px;
+    }
+  }
+
+  .img-entreno {
+    height: 260px;
+    margin-bottom: 1.4rem;
+  }
+
+  .img-entreno.img-2,
+  .img-entreno.img-3 {
+    margin-top: 0;
+    z-index: auto;
+  }
+}
+
+
+@include mobile-break {
+
+  .entrenamientos {
+    padding: 2.5rem 0;
+
+    .row {
+      align-items: flex-start; 
+      margin-bottom: 3rem;
+    }
+
+    h3 {
+      margin-top: 1.2rem;
+      font-size: 1.4rem;
+      text-align: center;
+    }
+
+    p {
+      margin: 0.6rem auto 0;
+      text-align: center;
+    }
+  }
+
+  .img-entreno {
+    height: 180px;      
+    margin-bottom: 1rem;   
+    
+  }
+
+  .img-entreno.img-2,
+  .img-entreno.img-3 {
+    margin-top: 0;
+    z-index: auto;
+  }
+
+  .entrenamiento-wrapper {
+    padding: 0 1.2rem;
+  }
+}

@@ -1,3 +1,5 @@
+/*
+
 :root {
   --floral-white: #fffcf2;
   --dust-grey: #ccc5b9;
@@ -145,10 +147,10 @@ html::before {
   color: var(--color-accent);
 }
 
+*/
 
 
-
-/*SECCION CARRUSEL*/
+/*SECCION CARRUSEL
 
 .container {
   max-width: 1680px;
@@ -240,8 +242,9 @@ html::before {
 .hero-carousel {
   padding-top: 60px;
 }
+*/
 
-/*SECCION CARDS*/
+/*SECCION CARDS
 
 .card-img-top {
   height: 260px;
@@ -275,7 +278,8 @@ html::before {
   transform: scale(1.05);
 }
 
-/*SECCION VIDEOS*/
+*/
+/*SECCION VIDEOS
 
 video {
   width: 100%;
@@ -292,8 +296,8 @@ video {
     0 12px 30px rgba(0, 0, 0, 0.4),
     0 0 0 1px rgba(226, 221, 221, 0.526);
 }
-
-/*SECCION FOOTER*/
+*/
+/*SECCION FOOTER
 
 .footer .container {
   max-width: 1700px;
@@ -404,7 +408,7 @@ video {
   padding: 2rem;
 }
 
-/*SECCIÓN TITULOS*/
+/*SECCIÓN TITULOS
 
 .section-title {
   margin: 4rem 0 2.5rem;
@@ -435,6 +439,7 @@ video {
   left: 50%;
   transform: translateX(-50%);
 }
+*/
 
 /* ENTRENAMIENTO PAGE*/
 
@@ -1342,7 +1347,7 @@ video {
 /* MEDIA QUERIES
 ----------------- */
 
-/*NAVBAR*/
+/*NAVBAR
 @media (max-width: 1200px) {
   .navbar .container-fluid {
     padding-top: 0.8rem;
@@ -1392,8 +1397,10 @@ video {
     display: none;
   }
 }
+*/
 
-/*TÍTULOS*/
+
+/*TÍTULOS
 
 @media (max-width: 768px) {
   .section-title {
@@ -1419,8 +1426,8 @@ video {
     height: 2px;
   }
 }
-
-/*FOOTER*/
+*/
+/*FOOTER
 
 @media (max-width: 1440px) {
   .footer .container {
@@ -1482,8 +1489,9 @@ video {
     font-size: 0.9rem;
   }
 }
+  */
 
-/*TITULOS*/
+/*TITULOS
 
 @media (max-width: 768px) {
   .section-title {
@@ -1517,11 +1525,11 @@ video {
     height: 2px;
   }
 }
-
+*/
 
 /* ---------- INDEX ---------- */
 
-/*CAROUSEL*/
+/*CAROUSEL
 @media (max-width: 1440px) {
   .container {
     max-width: 1320px;
@@ -1628,7 +1636,7 @@ video {
   }
 }
 
-/*CARDS*/
+/*CARDS
 
 @media (max-width: 1200px) {
   .card-img-top {
@@ -1687,7 +1695,7 @@ video {
   }
 }
 
-/*VIDEOS*/
+/*VIDEOS
 
 @media (max-width: 768px) {
   .video-wrapper {

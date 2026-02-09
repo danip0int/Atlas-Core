@@ -1,0 +1,45 @@
+@use "../utils/mixins" as *;
+
+.section-title {
+  /* DESKTOP GRANDE */
+  margin: 4rem 0 2.5rem;
+
+  h2 {
+    font-size: 2.3rem;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.6rem;
+
+    &::after {
+      @include underline();
+    }
+  }
+
+  /* RESPONSIVE */
+  @include tablet-break {
+    margin: 3rem 0 2rem;
+
+    h2 {
+      font-size: 2rem;
+    }
+  }
+
+  @include mobile-break {
+    margin: 2.2rem 0 1.6rem;
+
+    h2 {
+      font-size: 1.6rem;
+      padding-bottom: 0.45rem;
+    }
+  }
+}
+
+.title-center {
+  text-align: center;
+
+  h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

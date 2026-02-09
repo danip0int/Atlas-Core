@@ -1,0 +1,158 @@
+
+@use "../utils/mixins" as *;
+
+.footer {
+  position: relative;
+  z-index: 1;
+  background: var(--carbon-black);
+  color: var(--floral-white);
+  margin-top: 3rem;
+  padding: 4.5rem 0 3.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+  .container {
+    max-width: 1700px;
+  }
+
+  .row {
+    justify-content: space-between;
+
+    > div {
+      position: relative;
+      padding: 0 2rem;
+
+      &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        top: 20%;
+        right: 0;
+        height: 60%;
+        width: 1px;
+        background: rgba(255, 255, 255, 0.08);
+      }
+    }
+  }
+
+  h3 {
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: var(--dust-grey);
+    line-height: 1.6;
+  }
+
+  a {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color 0.25s ease;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+
+  /* RESPONSIVE*/
+
+  @include tablet-break {
+    padding: 3.5rem 0 3rem;
+
+    .row {
+      > div {
+        padding: 0 1.5rem;
+        margin-bottom: 2.5rem;
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+
+  @include mobile-break {
+    padding: 3rem 0 2.5rem;
+    text-align: center;
+
+    .row {
+      > div {
+        padding: 0;
+        margin-bottom: 2rem;
+      }
+    }
+
+    h3 {
+      font-size: 1.15rem;
+    }
+  }
+}
+
+.contacto-footer {
+  p {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+
+    @include mobile-break {
+      justify-content: center;
+    }
+  }
+}
+
+.texto-footer,
+.logo-footer {
+  margin-top: 2rem;
+}
+
+.footer-divisor {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.12),
+    transparent
+  );
+  margin-bottom: 3rem;
+
+  @include mobile-break {
+    margin-bottom: 2rem;
+  }
+}
+
+.redes-footer {
+  margin-top: 1rem;
+
+  .footer-icon {
+    font-size: 1.6rem;
+    color: var(--dust-grey);
+    transition: color 0.25s ease, transform 0.25s ease;
+
+    &:hover {
+      color: var(--spicy-paprika);
+      transform: translateY(-2px);
+    }
+  }
+
+  @include mobile-break {
+    display: flex;
+    justify-content: center;
+    gap: 1.4rem;
+  }
+}
+
+.principal {
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  @include mobile-break {
+    padding: 1.5rem;
+  }
+}
