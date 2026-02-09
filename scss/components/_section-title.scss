@@ -17,6 +17,7 @@
   }
 
   /* RESPONSIVE */
+
   @include tablet-break {
     margin: 3rem 0 2rem;
 
@@ -26,7 +27,13 @@
   }
 
   @include mobile-break {
-    margin: 2.2rem 0 1.6rem;
+    margin: 0.5rem 0 0.5rem;
+
+    .disciplinas {
+      .section-title {
+        margin-top: 0.5rem;
+      }
+    }
 
     h2 {
       font-size: 1.6rem;
