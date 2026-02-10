@@ -55,14 +55,16 @@ html::before {
 }
 
 body {
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
 }
 
+/* === UTILIDADES ===
+@use "utils/breakpoints";
+*/
+/* === LAYOUT === 
+@use "layout/sections;
+*/
 .navbar {
   position: fixed;
   top: 0;
@@ -106,10 +108,7 @@ body {
   font-size: 1rem;
   background: rgba(255, 255, 255, 0.06);
   margin-left: 0.5rem;
-  transition:
-    color 0.25s ease,
-    background 0.25s ease,
-    transform 0.25s ease;
+  transition: color 0.25s ease, background 0.25s ease, transform 0.25s ease;
 }
 
 .navbar-nav .nav-link::after {
@@ -149,9 +148,7 @@ body {
   color: var(--color-text-main);
   font-size: 1.5rem;
   opacity: 0.8;
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 .nav-icon:hover {
@@ -286,12 +283,7 @@ body {
 .footer-divisor {
   height: 1px;
   width: 100%;
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(255, 255, 255, 0.12),
-    transparent
-  );
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.12), transparent);
   margin-bottom: 3rem;
 }
 @media (max-width: 576px) {
@@ -306,9 +298,7 @@ body {
 .redes-footer .footer-icon {
   font-size: 1.6rem;
   color: var(--dust-grey);
-  transition:
-    color 0.25s ease,
-    transform 0.25s ease;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 .redes-footer .footer-icon:hover {
   color: var(--spicy-paprika);
@@ -333,7 +323,11 @@ body {
   }
 }
 
-*/ .section-title {
+/* === COMPONENTES ===
+@use "components/buttons";
+
+*/
+.section-title {
   /* DESKTOP GRANDE */
   margin: 4rem 0 2.5rem;
 }
@@ -533,18 +527,12 @@ body {
   border-radius: 22px;
   overflow: hidden;
   min-height: 520px;
-  box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.45),
-    0 0 0 1px rgba(255, 255, 255, 0.04);
-  transition:
-    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.35s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease;
 }
 .card:hover {
   transform: translateY(-6px);
-  box-shadow:
-    0 20px 45px rgba(0, 0, 0, 0.6),
-    0 0 0 10px rgba(235, 94, 40, 0.45);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), 0 0 0 10px rgba(235, 94, 40, 0.45);
 }
 .card:hover .card-img-top {
   transform: scale(1.05);
@@ -579,9 +567,7 @@ body {
   border-radius: 18px;
   background: var(--color-bg-card);
   aspect-ratio: 16/9;
-  box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.4),
-    0 0 0 1px rgba(226, 221, 221, 0.526);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(226, 221, 221, 0.526);
 }
 .video-wrapper video {
   width: 100%;
@@ -621,19 +607,13 @@ body {
   object-fit: cover;
   filter: blur(1.2px);
   transform: scale(1.05);
-  transition:
-    transform 0.4s ease,
-    filter 0.4s ease;
+  transition: transform 0.4s ease, filter 0.4s ease;
 }
 .disciplinas .disciplina-card::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.35),
-    rgba(0, 0, 0, 0.6)
-  );
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.6));
   transition: background 0.3s ease;
 }
 .disciplinas .disciplina-card .card-title {
@@ -668,7 +648,10 @@ body {
     font-size: 0.9rem;
   }
 }
+/* === PÁGINAS ===
+@use "pages/index";
 
+*/
 .entrenamiento-wrapper {
   max-width: 1600px;
   margin: 0 auto;
@@ -683,20 +666,14 @@ body {
   border-radius: 8px;
   position: relative;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
-  transition:
-    transform 0.4s ease,
-    box-shadow 0.3s ease;
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
 }
 .img-entreno::after {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 8px;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.15),
-    rgba(0, 0, 0, 0.35)
-  );
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.35));
   pointer-events: none;
 }
 .img-entreno:hover {
@@ -983,9 +960,7 @@ body {
 }
 .instalaciones-galeria .galeria-item:hover .galeria-img {
   transform: translateY(-6px);
-  box-shadow:
-    0 28px 60px rgba(0, 0, 0, 0.6),
-    0 0 0 1px rgba(235, 94, 40, 0.35);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(235, 94, 40, 0.35);
 }
 .instalaciones-galeria .galeria-item:hover .galeria-img img {
   transform: scale(1.06);
@@ -994,12 +969,8 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 22px;
-  box-shadow:
-    0 18px 40px rgba(0, 0, 0, 0.45),
-    0 0 0 1px rgba(255, 255, 255, 0.04);
-  transition:
-    transform 0.4s ease,
-    box-shadow 0.4s ease;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 .instalaciones-galeria .galeria-img img {
   width: 100%;
@@ -1102,16 +1073,10 @@ body {
     display: flex;
     flex-direction: column;
   }
-  .instalaciones-galeria .galeria-item.alta,
-  .instalaciones-galeria .galeria-item.media,
-  .instalaciones-galeria .galeria-item.baja,
-  .instalaciones-galeria .galeria-item.galeria-item-wide {
+  .instalaciones-galeria .galeria-item.alta, .instalaciones-galeria .galeria-item.media, .instalaciones-galeria .galeria-item.baja, .instalaciones-galeria .galeria-item.galeria-item-wide {
     grid-column: auto;
   }
-  .instalaciones-galeria .galeria-item.alta .galeria-img,
-  .instalaciones-galeria .galeria-item.media .galeria-img,
-  .instalaciones-galeria .galeria-item.baja .galeria-img,
-  .instalaciones-galeria .galeria-item.galeria-item-wide .galeria-img {
+  .instalaciones-galeria .galeria-item.alta .galeria-img, .instalaciones-galeria .galeria-item.media .galeria-img, .instalaciones-galeria .galeria-item.baja .galeria-img, .instalaciones-galeria .galeria-item.galeria-item-wide .galeria-img {
     height: 260px;
   }
   .instalaciones-galeria .galeria-img {
@@ -1142,17 +1107,16 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  justify-items: center;
 }
 .membresias .plan-card {
-  width: 380px;
+  width: 420px;
   background: var(--color-bg-card);
   color: var(--color-text);
   padding: 2.5rem 2rem;
   border-radius: 16px;
   text-align: center;
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 .membresias .plan-card:hover {
   transform: translateY(-8px);
@@ -1180,12 +1144,7 @@ body {
   bottom: 0;
   width: 40px;
   height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--color-accent),
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
   transform: translateX(-50%);
   box-shadow: 0 0 8px rgba(235, 94, 40, 0.6);
 }
@@ -1236,9 +1195,7 @@ body {
   color: #fff;
   font-weight: 600;
   text-decoration: none;
-  transition:
-    background 0.25s ease,
-    transform 0.25s ease;
+  transition: background 0.25s ease, transform 0.25s ease;
   box-shadow: 0 8px 20px rgba(235, 94, 40, 0.35);
 }
 .membresias .plan-card .btn-plan:hover {
@@ -1252,9 +1209,7 @@ body {
   z-index: 2;
   padding: 3.2rem 2.2rem;
   padding-top: 2.5rem;
-  box-shadow:
-    0 30px 60px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(235, 94, 40, 0.25);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(235, 94, 40, 0.25);
 }
 .membresias .plan-card.plan-destacado:hover {
   transform: scale(1.075) translateY(-6px);
@@ -1281,11 +1236,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.02),
-    rgba(0, 0, 0, 0)
-  );
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0));
   pointer-events: none;
 }
 .beneficios-header {
@@ -1309,10 +1260,7 @@ body {
 .beneficios .beneficio-item {
   padding: 1.5rem 1.2rem;
   border-radius: 16px;
-  transition:
-    transform 0.3s ease,
-    background 0.3s ease,
-    opacity 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease, opacity 0.3s ease;
 }
 .beneficios .beneficio-item i {
   display: inline-block;
@@ -1346,6 +1294,38 @@ body {
   opacity: 0.9;
 }
 
+/*RESPONSIVE*/
+@media (max-width: 992px) {
+  .planes-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .plan-card {
+    max-width: 100%;
+  }
+  .plan-card.plan-destacado {
+    transform: scale(1.04);
+  }
+  .plan-card.plan-destacado:hover {
+    transform: scale(1.04) translateY(-4px);
+  }
+}
+@media (max-width: 576px) {
+  .planes-grid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+  .plan-card {
+    max-width: 100%;
+    padding: 2.2rem 1.8rem;
+  }
+  .plan-card.plan-destacado {
+    transform: none;
+  }
+  .plan-card.plan-destacado:hover {
+    transform: translateY(-4px);
+  }
+}
 .contacto-hero {
   width: 100%;
   padding: 6rem 0;
@@ -1412,10 +1392,7 @@ body {
   cursor: pointer;
   align-self: flex-start;
   box-shadow: 0 8px 25px rgba(235, 94, 40, 0.35);
-  transition:
-    background-color 0.25s ease,
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+  transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 .contacto-hero .contacto-form button:hover {
   transform: translateY(-3px);
@@ -1461,18 +1438,12 @@ body {
   justify-content: center;
   align-items: center;
   overflow: visible;
-  box-shadow:
-    0 12px 30px rgba(235, 94, 40, 0.35),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.15);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  box-shadow: 0 12px 30px rgba(235, 94, 40, 0.35), inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .contacto-canales .canal-item:hover {
   transform: translateY(-8px) scale(1.03);
-  box-shadow:
-    0 20px 45px rgba(235, 94, 40, 0.5),
-    inset 0 0 0 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 20px 45px rgba(235, 94, 40, 0.5), inset 0 0 0 1px rgba(0, 0, 0, 0.25);
 }
 .contacto-canales .canal-item i {
   font-size: 2.5rem;
@@ -1510,9 +1481,7 @@ body {
   font-size: 1.4rem;
   color: var(--color-text-main);
   opacity: 0.85;
-  transition:
-    transform 0.25s ease,
-    opacity 0.25s ease;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 .contacto-canales .canal-item .canal-content .redes-links a:hover i {
   transform: scale(1.25);
@@ -1569,7 +1538,7 @@ body {
   height: 350px;
   border: none;
   border-radius: 20px;
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.35),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
+
+/*# sourceMappingURL=main.css.map */

@@ -1,3 +1,4 @@
+@use "../utils/mixins" as *;
 
 .membresias {
   padding: 6rem 0;
@@ -20,10 +21,11 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    justify-items: center;
   }
 
   .plan-card {
-    width: 380px;
+    width: 420px;
     background: var(--color-bg-card);
     color: var(--color-text);
     padding: 2.5rem 2rem;
@@ -251,6 +253,47 @@
       transform: translateY(-4px);
       background: rgba(255, 255, 255, 0.03);
       opacity: 0.9;
+    }
+  }
+}
+
+/*RESPONSIVE*/
+
+@include tablet-break {
+  .planes-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .plan-card {
+    max-width: 100%;
+  }
+
+  .plan-card.plan-destacado {
+    transform: scale(1.04);
+
+    &:hover {
+      transform: scale(1.04) translateY(-4px);
+    }
+  }
+}
+
+@include mobile-break {
+  .planes-grid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  .plan-card {
+    max-width: 100%;
+    padding: 2.2rem 1.8rem;
+  }
+
+  .plan-card.plan-destacado {
+    transform: none;
+
+    &:hover {
+      transform: translateY(-4px);
     }
   }
 }
