@@ -260,40 +260,107 @@
 /*RESPONSIVE*/
 
 @include tablet-break {
-  .planes-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
+  .membresias {
 
-  .plan-card {
-    max-width: 100%;
-  }
+    .planes-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
 
-  .plan-card.plan-destacado {
-    transform: scale(1.04);
+    .plan-card {
+      max-width: 100%;
+    }
 
-    &:hover {
-      transform: scale(1.04) translateY(-4px);
+    .plan-card.plan-destacado {
+      transform: scale(1.04);
+
+      &:hover {
+        transform: scale(1.04) translateY(-4px);
+      }
     }
   }
 }
 
 @include mobile-break {
-  .planes-grid {
-    grid-template-columns: 1fr;
-    gap: 1.8rem;
+  .membresias {
+
+    .planes-grid {
+      grid-template-columns: 1fr;
+      gap: 1.8rem;
+    }
+
+    .plan-card {
+      max-width: 390px;
+      padding: 2.2rem 1.8rem;
+    }
+
+    .plan-card.plan-destacado {
+      transform: none !important;
+
+      &:hover {
+        transform: translateY(-4px) !important;
+      }
+    }
   }
+}
 
-  .plan-card {
-    max-width: 100%;
-    padding: 2.2rem 1.8rem;
+/*RESPONSIVE BENEFICIOS*/
+
+@include tablet-break {
+  .beneficios {
+
+    &-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    &-header {
+      margin-bottom: 2.5rem;
+
+      h2 {
+        font-size: 1.8rem;
+      }
+    }
   }
+}
 
-  .plan-card.plan-destacado {
-    transform: none;
 
-    &:hover {
-      transform: translateY(-4px);
+@include mobile-break {
+  .beneficios {
+
+    padding: 4rem 0;
+
+    &-grid {
+      grid-template-columns: 1fr;
+      gap: 1.8rem;
+    }
+
+    &-header {
+      margin-bottom: 2rem;
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
+
+    .beneficio-item {
+      padding: 1.3rem 1rem;
+
+      i {
+        font-size: 1.8rem;
+      }
+
+      h3 {
+        font-size: 1rem;
+      }
+
+      p {
+        font-size: 0.85rem;
+      }
     }
   }
 }

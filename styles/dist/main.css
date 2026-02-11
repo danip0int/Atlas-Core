@@ -13,7 +13,6 @@ body {
 body {
   position: relative;
   color: var(--color-text-main);
-  overflow-x: hidden;
   background: transparent;
 }
 
@@ -1296,34 +1295,77 @@ body {
 
 /*RESPONSIVE*/
 @media (max-width: 992px) {
-  .planes-grid {
+  .membresias .planes-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
-  .plan-card {
+  .membresias .plan-card {
     max-width: 100%;
   }
-  .plan-card.plan-destacado {
+  .membresias .plan-card.plan-destacado {
     transform: scale(1.04);
   }
-  .plan-card.plan-destacado:hover {
+  .membresias .plan-card.plan-destacado:hover {
     transform: scale(1.04) translateY(-4px);
   }
 }
 @media (max-width: 576px) {
-  .planes-grid {
+  .membresias .planes-grid {
     grid-template-columns: 1fr;
     gap: 1.8rem;
   }
-  .plan-card {
-    max-width: 100%;
+  .membresias .plan-card {
+    max-width: 390px;
     padding: 2.2rem 1.8rem;
   }
-  .plan-card.plan-destacado {
-    transform: none;
+  .membresias .plan-card.plan-destacado {
+    transform: none !important;
   }
-  .plan-card.plan-destacado:hover {
-    transform: translateY(-4px);
+  .membresias .plan-card.plan-destacado:hover {
+    transform: translateY(-4px) !important;
+  }
+}
+/*RESPONSIVE BENEFICIOS*/
+@media (max-width: 992px) {
+  .beneficios-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .beneficios-header {
+    margin-bottom: 2.5rem;
+  }
+  .beneficios-header h2 {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 576px) {
+  .beneficios {
+    padding: 4rem 0;
+  }
+  .beneficios-grid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+  .beneficios-header {
+    margin-bottom: 2rem;
+  }
+  .beneficios-header h2 {
+    font-size: 1.6rem;
+  }
+  .beneficios-header p {
+    font-size: 0.9rem;
+  }
+  .beneficios .beneficio-item {
+    padding: 1.3rem 1rem;
+  }
+  .beneficios .beneficio-item i {
+    font-size: 1.8rem;
+  }
+  .beneficios .beneficio-item h3 {
+    font-size: 1rem;
+  }
+  .beneficios .beneficio-item p {
+    font-size: 0.85rem;
   }
 }
 .contacto-hero {
@@ -1539,6 +1581,128 @@ body {
   border: none;
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+/*RESPONSIVE*/
+@media (max-width: 992px) {
+  .contacto {
+    flex-direction: column;
+    min-height: auto;
+  }
+  .contacto-form {
+    flex: unset;
+    padding: 3rem 2.5rem;
+  }
+  .contacto-form form {
+    max-width: 100%;
+  }
+  .contacto-img {
+    flex: unset;
+    height: 380px;
+  }
+  .contacto-img img {
+    height: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .contacto-hero {
+    padding: 4rem 0;
+  }
+  .contacto {
+    width: 92%;
+    border-radius: 20px;
+  }
+  .contacto-form {
+    padding: 2.2rem 1.5rem;
+  }
+  .contacto-form textarea {
+    min-height: 160px;
+  }
+  .contacto-form button {
+    align-self: stretch;
+    text-align: center;
+  }
+  .contacto-img {
+    height: 240px;
+  }
+}
+/*RESPONSIVE CANALES DE CONTACTO (ESFERAS)*/
+@media (max-width: 992px) {
+  .contacto-canales .canales-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.2rem;
+    max-width: 700px;
+  }
+  .canal-item {
+    padding: 2rem;
+  }
+}
+@media (max-width: 576px) {
+  .contacto-canales .canales-grid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+    max-width: 320px;
+  }
+  .canales-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+  .canal-item {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .canal-item i {
+    font-size: 2.2rem;
+  }
+  .canal-item h4 {
+    font-size: 1rem;
+  }
+  .canal-item p {
+    font-size: 0.85rem;
+  }
+  .canal-item:hover {
+    transform: none;
+  }
+}
+/*RESPONSIVE MAPA CONTACTO*/
+@media (max-width: 992px) {
+  .contacto-separador {
+    margin: 3rem auto 2rem;
+  }
+  .contacto-mapa .mapacontainer {
+    width: 92%;
+  }
+  .contacto-mapa .titulo-mapa h4 {
+    font-size: 1.7rem;
+  }
+  .contacto-mapa iframe {
+    height: 300px;
+    border-radius: 18px;
+  }
+}
+@media (max-width: 576px) {
+  .contacto-separador {
+    width: 80px;
+    height: 2px;
+    margin: 2.5rem auto 1.8rem;
+  }
+  .contacto-mapa .mapacontainer {
+    width: 92%;
+  }
+  .contacto-mapa .titulo-mapa {
+    margin-bottom: 1.8rem;
+  }
+  .contacto-mapa .titulo-mapa h4 {
+    font-size: 1.4rem;
+  }
+  .contacto-mapa .titulo-mapa p {
+    font-size: 0.85rem;
+  }
+  .contacto-mapa iframe {
+    height: 220px;
+    border-radius: 16px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
