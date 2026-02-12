@@ -1,0 +1,66 @@
+
+@use "../base/fonts" as *;
+
+@mixin btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.85rem 2rem;
+  border-radius: 999px;
+
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+
+  transition: 
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease;
+
+    &:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+}
+
+
+.btn-primary {
+  @include btn-base;
+
+  background: var(--color-accent);
+  color: #fff;
+
+  box-shadow: 0 8px 20px rgba(235, 94, 40, 0.35);
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(235, 94, 40, 0.45);
+  }
+}
+
+.card .btn-primary {
+  padding: 0.7rem 1.6rem;
+  font-size: 0.9rem;
+}
+
+
+.btn-secondary {
+  @include btn-base;
+
+  background: transparent;
+  color: var(--color-text-main);
+  border: 1px solid var(--color-accent);
+
+  &:hover {
+    background: var(--color-accent);
+    color: #fff;
+  }
+}

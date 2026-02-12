@@ -60,27 +60,10 @@
         resize: none;
       }
 
-      button {
-        margin-top: 1.5rem;
-        padding: 0.9rem 2.2rem;
-        border-radius: 999px;
-        border: none;
-        background: var(--color-accent);
-        color: #fff;
-        font-weight: 600;
-        cursor: pointer;
-        align-self: flex-start;
-        box-shadow: 0 8px 25px rgba(235, 94, 40, 0.35);
-        transition:
-          background-color 0.25s ease,
-          transform 0.25s ease,
-          box-shadow 0.25s ease;
-
-        &:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 12px 35px rgba(235, 94, 40, 0.45);
-        }
-      }
+      .btn-form {
+  margin-top: 1.5rem;
+  align-self: flex-start;
+}
     }
 
     &-img {

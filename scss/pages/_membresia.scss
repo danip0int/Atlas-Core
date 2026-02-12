@@ -25,7 +25,8 @@
   }
 
   .plan-card {
-    width: 420px;
+   width: 100%;
+  max-width: 420px;
     background: var(--color-bg-card);
     color: var(--color-text);
     padding: 2.5rem 2rem;
@@ -85,7 +86,8 @@
     }
 
     .plan-precio {
-      font-size: 2.2rem;
+      font-size: 2.4rem;
+    letter-spacing: -0.5px;
       font-weight: 700;
       margin: 1.5rem 0;
 
@@ -119,25 +121,8 @@
     }
 
     .btn-plan {
-      display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.75rem 1.8rem;
-      border-radius: 999px;
-      background: var(--color-accent);
-      color: #fff;
-      font-weight: 600;
-      text-decoration: none;
-      transition:
-        background 0.25s ease,
-        transform 0.25s ease;
-      box-shadow: 0 8px 20px rgba(235, 94, 40, 0.35);
-
-      &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 12px 30px rgba(235, 94, 40, 0.45);
-      }
-    }
-
+  margin-top: 1.5rem;
+}
     &.plan-destacado {
       background: linear-gradient(180deg, #1f1f1f, #0f0f0f);
       transform: scale(1.08);
@@ -150,7 +135,7 @@
         0 0 0 1px rgba(235, 94, 40, 0.25);
 
       &:hover {
-        transform: scale(1.075) translateY(-6px);
+        transform: scale(1.04) translateY(-6px);
       }
 
       .plan-header h3::after {
@@ -158,14 +143,14 @@
         height: 3px;
       }
 
-      .btn-plan {
-        background: #fff;
-        color: #111;
+      .btn-primary {
+    background: #ff5a1f;
+    box-shadow: 0 12px 35px rgba(255, 90, 31, 0.45);
 
-        &:hover {
-          background: #f1f1f1;
-        }
-      }
+    &:hover {
+      background: #ff4710;
+    }
+  }
     }
   }
 }
