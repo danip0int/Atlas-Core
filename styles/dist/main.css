@@ -579,18 +579,28 @@ p {
     border-radius: 24px;
   }
 }
-.card-wrapper {
-  height: 100%;
-}
-
 .card {
+  display: flex;
+  flex-direction: column;
   position: relative;
+  min-height: 520px;
   background: var(--color-bg-card);
   color: var(--color-text-main);
   border-radius: 22px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.04);
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease;
+}
+.card .card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.card .card-body .btn-primary {
+  margin-top: auto;
+}
+.card .card-body .btn-primary {
+  align-self: center;
 }
 .card:hover {
   transform: translateY(-6px);

@@ -1,12 +1,10 @@
-
 @use "../utils/mixins" as *;
 
-.card-wrapper {
-  height: 100%;
-}
-
 .card {
+  display: flex;
+  flex-direction: column;
   position: relative;
+  min-height: 520px;
   background: var(--color-bg-card);
   color: var(--color-text-main);
   border-radius: 22px;
@@ -19,7 +17,17 @@
   transition:
     transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.35s ease;
-
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .card-body .btn-primary {
+    margin-top: auto;
+  }
+  .card-body .btn-primary {
+    align-self: center;
+  }
   &:hover {
     transform: translateY(-6px);
     box-shadow:
@@ -30,14 +38,13 @@
       transform: scale(1.05);
     }
   }
-
   .card-img-top {
     height: 320px;
     object-fit: cover;
     transition: transform 0.4s ease;
   }
 
-/*RESPONSIVE*/
+  /*RESPONSIVE*/
 
   @include tablet-break {
     min-height: 480px;
@@ -47,13 +54,11 @@
     }
   }
 
-
   @include mobile-break {
-    min-height: auto; 
-    
+    min-height: auto;
+
     .card-img-top {
       height: 220px;
     }
   }
 }
-
