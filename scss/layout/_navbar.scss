@@ -5,13 +5,19 @@
   top: 0;
   width: 100%;
   z-index: 1050;
-  background: var(--color-bg-main) !important;
-  backdrop-filter: blur(8px);
+
+  background: rgba(10, 10, 10, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: background 0.3s ease, padding 0.3s ease;
 }
 
 .navbar .container-fluid {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5;
 }
 .navbar-dark .navbar-nav .nav-link {
   color: var(--color-text-main);
