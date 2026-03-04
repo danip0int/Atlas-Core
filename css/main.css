@@ -97,7 +97,7 @@ p {
 
 .navbar .container-fluid {
   padding-top: 0.7rem;
-  padding-bottom: 0.7rem;
+  padding-bottom: 0.7;
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -579,7 +579,7 @@ p {
   flex-direction: column;
   position: relative;
   min-height: 520px;
-  background: linear-gradient(180deg, var(--color-bg-card) 0%, #3a3531 100%);
+  background: var(--color-bg-card);
   color: var(--color-text-main);
   border-radius: 22px;
   overflow: hidden;
@@ -592,7 +592,7 @@ p {
   flex: 1;
 }
 .card .card-body .btn-primary {
-  margin-top: 1.5rem;
+  margin-top: auto;
 }
 .card .card-body .btn-primary {
   align-self: center;
@@ -608,9 +608,6 @@ p {
   height: 320px;
   object-fit: cover;
   transition: transform 0.4s ease;
-}
-.card .card-title {
-  margin-top: 0.5rem;
 }
 .card {
   /*RESPONSIVE*/
@@ -721,7 +718,7 @@ p {
 /* === PÁGINAS ===*/
 .entrenamiento-wrapper {
   max-width: 1600px;
-  margin: 4rem auto;
+  margin: 0 auto;
   padding: 0 2rem;
 }
 
@@ -814,7 +811,6 @@ p {
   }
   .entrenamiento-wrapper {
     padding: 0 1.2rem;
-    margin-bottom: 0rem;
   }
 }
 .hero-video {
@@ -1368,12 +1364,6 @@ p {
   }
 }
 @media (max-width: 576px) {
-  .membresias .plan-precio {
-    font-size: 7rem;
-  }
-  .membresias .plan-header h3 {
-    font-size: 1.35rem;
-  }
   .membresias .planes-grid {
     grid-template-columns: 1fr;
     gap: 1.8rem;
@@ -1443,7 +1433,7 @@ p {
   margin: auto;
   border-radius: 28px;
   overflow: hidden;
-  background: linear-gradient(180deg, var(--color-bg-card) 0%, #3a3531 100%);
+  background: var(--color-bg-card);
   box-shadow: 0 40px 80px rgba(0, 0, 0, 0.45);
 }
 .contacto-hero .contacto-form {

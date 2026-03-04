@@ -5,7 +5,7 @@
   flex-direction: column;
   position: relative;
   min-height: 520px;
-  background: var(--color-bg-card);
+  background: linear-gradient(180deg, var(--color-bg-card) 0%, #3a3531 100%);
   color: var(--color-text-main);
   border-radius: 22px;
   overflow: hidden;
@@ -23,7 +23,7 @@
     flex: 1;
   }
   .card-body .btn-primary {
-    margin-top: auto;
+    margin-top: 1.5rem;
   }
   .card-body .btn-primary {
     align-self: center;
@@ -44,6 +44,9 @@
     transition: transform 0.4s ease;
   }
 
+  .card-title {
+    margin-top: 0.5rem;
+  }
   /*RESPONSIVE*/
 
   @include tablet-break {

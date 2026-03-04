@@ -11,7 +11,7 @@
     margin: auto;
     border-radius: 28px;
     overflow: hidden;
-    background: var(--color-bg-card);
+    background: linear-gradient(180deg, var(--color-bg-card) 0%, #3a3531 100%);
     box-shadow: 0 40px 80px rgba(0, 0, 0, 0.45);
 
     &-form {
@@ -61,9 +61,9 @@
       }
 
       .btn-form {
-  margin-top: 1.5rem;
-  align-self: flex-start;
-}
+        margin-top: 1.5rem;
+        align-self: flex-start;
+      }
     }
 
     &-img {
@@ -82,11 +82,7 @@
         content: "";
         position: absolute;
         inset: 0;
-        background: linear-gradient(
-          to left,
-          rgba(0, 0, 0, 0.6),
-          transparent
-        );
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.6), transparent);
       }
     }
   }
@@ -251,7 +247,6 @@
 /*RESPONSIVE*/
 
 @include tablet-break {
-
   .contacto {
     flex-direction: column;
     min-height: auto;
@@ -274,11 +269,9 @@
   .contacto-img img {
     height: 100%;
   }
-
 }
 
 @include mobile-break {
-
   .contacto-hero {
     padding: 4rem 0;
   }
@@ -304,14 +297,11 @@
   .contacto-img {
     height: 240px;
   }
-
 }
-
 
 /*RESPONSIVE CANALES DE CONTACTO (ESFERAS)*/
 
 @include tablet-break {
-
   .contacto-canales .canales-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2.2rem;
@@ -321,11 +311,9 @@
   .canal-item {
     padding: 2rem;
   }
-
 }
 
 @include mobile-break {
-
   .contacto-canales .canales-grid {
     grid-template-columns: 1fr;
     gap: 1.8rem;
@@ -357,13 +345,11 @@
   .canal-item:hover {
     transform: none;
   }
-
 }
 
 /*RESPONSIVE MAPA CONTACTO*/
 
 @include tablet-break {
-
   .contacto-separador {
     margin: 3rem auto 2rem;
   }
@@ -380,12 +366,9 @@
     height: 300px;
     border-radius: 18px;
   }
-
 }
 
-
 @include mobile-break {
-
   .contacto-separador {
     width: 80px;
     height: 2px;
@@ -412,5 +395,4 @@
     height: 220px;
     border-radius: 16px;
   }
-
 }

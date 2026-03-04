@@ -25,8 +25,8 @@
   }
 
   .plan-card {
-   width: 100%;
-  max-width: 420px;
+    width: 100%;
+    max-width: 420px;
     background: var(--color-bg-card);
     color: var(--color-text);
     padding: 2.5rem 2rem;
@@ -87,7 +87,7 @@
 
     .plan-precio {
       font-size: 2.4rem;
-    letter-spacing: -0.5px;
+      letter-spacing: -0.5px;
       font-weight: 700;
       margin: 1.5rem 0;
 
@@ -121,8 +121,8 @@
     }
 
     .btn-plan {
-  margin-top: 1.5rem;
-}
+      margin-top: 1.5rem;
+    }
     &.plan-destacado {
       background: linear-gradient(180deg, #1f1f1f, #0f0f0f);
       transform: scale(1.08);
@@ -144,13 +144,13 @@
       }
 
       .btn-primary {
-    background: #ff5a1f;
-    box-shadow: 0 12px 35px rgba(255, 90, 31, 0.45);
+        background: #ff5a1f;
+        box-shadow: 0 12px 35px rgba(255, 90, 31, 0.45);
 
-    &:hover {
-      background: #ff4710;
-    }
-  }
+        &:hover {
+          background: #ff4710;
+        }
+      }
     }
   }
 }
@@ -246,7 +246,6 @@
 
 @include tablet-break {
   .membresias {
-
     .planes-grid {
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
@@ -268,7 +267,13 @@
 
 @include mobile-break {
   .membresias {
+    .plan-precio {
+      font-size: 7rem;
+    }
 
+    .plan-header h3 {
+      font-size: 1.35rem;
+    }
     .planes-grid {
       grid-template-columns: 1fr;
       gap: 1.8rem;
@@ -293,7 +298,6 @@
 
 @include tablet-break {
   .beneficios {
-
     &-grid {
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
@@ -309,10 +313,8 @@
   }
 }
 
-
 @include mobile-break {
   .beneficios {
-
     padding: 4rem 0;
 
     &-grid {
