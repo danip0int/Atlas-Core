@@ -267,34 +267,43 @@
       justify-content: center;
       background: linear-gradient(
         to top,
-        rgba(0, 0, 0, 0.55),
-        rgba(0, 0, 0, 0.15)
+        rgba(0, 0, 0, 0.65),
+        rgba(0, 0, 0, 0.35)
       );
 
       h3 {
         color: var(--color-text-main);
-        font-size: 1.4rem;
+        font-size: clamp(1.6rem, 2vw, 2.2rem);
         letter-spacing: 0.8px;
-        text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+        text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        padding: 0.6rem 1.2rem;
+  background: rgba(0,0,0,0.20);
+  backdrop-filter: blur(2px);
+  border-radius: 8px;
+  transform: translateY(8px);
+  opacity: 0.9;
+  transition: all 0.45s ease;
       }
     }
   }
 
   .descripcion {
-    margin-top: 0.9rem;
-    font-size: 0.95rem;
-    color: var(--color-text-muted);
-    line-height: 1.5;
-    max-width: 95%;
+   margin-top: 1rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-text-main);
+  opacity: 0.85;
+  line-height: 1.6;
+  max-width: 95%;
 
     &::before {
       content: "";
-      display: block;
-      width: 32px;
-      height: 2px;
-      background: var(--color-accent);
-      margin-bottom: 0.6rem;
-      opacity: 0.6;
+  display: block;
+  width: 46px;
+  height: 3px;
+  background: var(--color-accent);
+  margin-bottom: 0.7rem;
+  opacity: 0.9;
     }
   }
 }
@@ -338,6 +347,34 @@
 }
 
 /*RESPONSIVE INSTALACIONES*/
+
+@include desktop-break {
+  .instalaciones-galeria {
+    padding-top: 4rem;
+
+    .galeria-item {
+      &.alta .galeria-img {
+        height: 370px;
+      }
+
+      &.media .galeria-img {
+        height: 300px;
+      }
+
+      &.baja .galeria-img {
+        height: 210px;
+      }
+
+      &.galeria-item-wide .galeria-img {
+        height: 250px;
+      }
+    }
+
+    .galeria-overlay h3 {
+      font-size: 1.1rem;
+    }
+  }
+}
 
 @include tablet-break {
   .instalaciones-galeria {

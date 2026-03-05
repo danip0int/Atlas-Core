@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  min-height: 520px;
+  height: 520px;
   background: linear-gradient(180deg, var(--color-bg-card) 0%, #3a3531 100%);
   color: var(--color-text-main);
   border-radius: 22px;
@@ -18,12 +18,16 @@
     transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.35s ease;
   .card-body {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  text-align: center;
+  padding: 1.8rem 1.5rem;
+}
   .card-body .btn-primary {
-    margin-top: 1.5rem;
+    margin-top: 0.8rem;
   }
   .card-body .btn-primary {
     align-self: center;
@@ -43,25 +47,43 @@
     object-fit: cover;
     transition: transform 0.4s ease;
   }
+  .card-text {
+  overflow: hidden;
+  margin: 0;
+}
 
   .card-title {
-    margin-top: 0.5rem;
+    margin: 0;
   }
   /*RESPONSIVE*/
 
-  @include tablet-break {
-    min-height: 480px;
+@include desktop-break {
 
-    .card-img-top {
-      height: 280px;
-    }
+  height: 460px;
+
+  .card-img-top {
+    height: 240px;
+  }
+  .card-body {
+    padding: 1.4rem 1.2rem;
+    gap: 0.9rem;
   }
 
-  @include mobile-break {
-    min-height: auto;
+}
 
-    .card-img-top {
-      height: 220px;
-    }
+@include tablet-break {
+  min-height: 480px;
+
+  .card-img-top {
+    height: 280px;
   }
+}
+
+@include mobile-break {
+  min-height: auto;
+
+  .card-img-top {
+    height: 220px;
+  }
+}
 }

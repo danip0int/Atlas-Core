@@ -78,10 +78,7 @@ p {
   --color-accent: var(--spicy-paprika);
 }
 
-/* === UTILIDADES ===
-
-@use "utils/mixins";
-
+/* === UTILIDADES ===*/
 /* === LAYOUT === */
 .navbar {
   position: fixed;
@@ -578,7 +575,7 @@ p {
   display: flex;
   flex-direction: column;
   position: relative;
-  min-height: 520px;
+  height: 520px;
   background: linear-gradient(180deg, var(--color-bg-card) 0%, #3a3531 100%);
   color: var(--color-text-main);
   border-radius: 22px;
@@ -589,10 +586,14 @@ p {
 .card .card-body {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  text-align: center;
+  padding: 1.8rem 1.5rem;
 }
 .card .card-body .btn-primary {
-  margin-top: 1.5rem;
+  margin-top: 0.8rem;
 }
 .card .card-body .btn-primary {
   align-self: center;
@@ -609,11 +610,27 @@ p {
   object-fit: cover;
   transition: transform 0.4s ease;
 }
+.card .card-text {
+  overflow: hidden;
+  margin: 0;
+}
 .card .card-title {
-  margin-top: 0.5rem;
+  margin: 0;
 }
 .card {
   /*RESPONSIVE*/
+}
+@media (max-width: 1400px) {
+  .card {
+    height: 460px;
+  }
+  .card .card-img-top {
+    height: 240px;
+  }
+  .card .card-body {
+    padding: 1.4rem 1.2rem;
+    gap: 0.9rem;
+  }
 }
 @media (max-width: 992px) {
   .card {
@@ -665,6 +682,8 @@ p {
   height: auto;
 }
 .disciplinas .disciplina-card {
+  max-width: 1020px;
+  margin: 0 auto 1rem;
   height: 400px;
   border: none;
   overflow: hidden;
@@ -704,6 +723,12 @@ p {
 }
 
 /*RESPONSIVE*/
+@media (max-width: 1400px) {
+  .disciplinas .disciplina-card {
+    height: 310px;
+    max-width: 550px;
+  }
+}
 @media (max-width: 992px) {
   .disciplinas .disciplina-card {
     height: 180px;
@@ -1052,29 +1077,38 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.15));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.35));
 }
 .instalaciones-galeria .galeria-img .galeria-overlay h3 {
   color: var(--color-text-main);
-  font-size: 1.4rem;
+  font-size: clamp(1.6rem, 2vw, 2.2rem);
   letter-spacing: 0.8px;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  padding: 0.6rem 1.2rem;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(2px);
+  border-radius: 8px;
+  transform: translateY(8px);
+  opacity: 0.9;
+  transition: all 0.45s ease;
 }
 .instalaciones-galeria .descripcion {
-  margin-top: 0.9rem;
-  font-size: 0.95rem;
-  color: var(--color-text-muted);
-  line-height: 1.5;
+  margin-top: 1rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-text-main);
+  opacity: 0.85;
+  line-height: 1.6;
   max-width: 95%;
 }
 .instalaciones-galeria .descripcion::before {
   content: "";
   display: block;
-  width: 32px;
-  height: 2px;
+  width: 46px;
+  height: 3px;
   background: var(--color-accent);
-  margin-bottom: 0.6rem;
-  opacity: 0.6;
+  margin-bottom: 0.7rem;
+  opacity: 0.9;
 }
 
 /*RESPONSIVE*/
@@ -1108,6 +1142,26 @@ p {
   }
 }
 /*RESPONSIVE INSTALACIONES*/
+@media (max-width: 1400px) {
+  .instalaciones-galeria {
+    padding-top: 4rem;
+  }
+  .instalaciones-galeria .galeria-item.alta .galeria-img {
+    height: 370px;
+  }
+  .instalaciones-galeria .galeria-item.media .galeria-img {
+    height: 300px;
+  }
+  .instalaciones-galeria .galeria-item.baja .galeria-img {
+    height: 210px;
+  }
+  .instalaciones-galeria .galeria-item.galeria-item-wide .galeria-img {
+    height: 250px;
+  }
+  .instalaciones-galeria .galeria-overlay h3 {
+    font-size: 1.1rem;
+  }
+}
 @media (max-width: 992px) {
   .instalaciones-galeria {
     padding-top: 4rem;
@@ -1180,16 +1234,37 @@ p {
 .membresias .plan-card {
   width: 100%;
   max-width: 420px;
-  background: var(--color-bg-card);
+  position: relative;
+  overflow: hidden;
   color: var(--color-text);
   padding: 2.5rem 2rem;
   border-radius: 16px;
   text-align: center;
+  background: linear-gradient(160deg, #3a3733 0%, #2f2c29 60%, #262320 100%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.membresias .plan-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20%;
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  box-shadow: 0 0 10px rgba(235, 94, 40, 0.6);
+}
+.membresias .plan-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.07), transparent 60%);
+  opacity: 0.6;
+  pointer-events: none;
 }
 .membresias .plan-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 .membresias .plan-card .plan-header {
   min-height: 70px;
@@ -1352,13 +1427,40 @@ p {
 }
 
 /*RESPONSIVE*/
+@media (max-width: 1400px) {
+  .membresias .planes-grid {
+    max-width: 1050px;
+    margin-inline: auto;
+    gap: 2.8rem;
+  }
+  .membresias .plan-card {
+    max-width: 320px;
+    padding: 1.8rem 1.5rem;
+  }
+  .membresias .plan-precio {
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+  .membresias .plan-list {
+    margin-top: 1rem;
+  }
+  .membresias .plan-list li {
+    margin-bottom: 0.4rem;
+  }
+  .membresias .plan-card.plan-destacado {
+    padding: 2.3rem 1.7rem;
+    transform: scale(1.05);
+  }
+}
 @media (max-width: 992px) {
   .membresias .planes-grid {
-    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2rem;
   }
   .membresias .plan-card {
-    max-width: 100%;
+    max-width: none;
+    width: 100%;
   }
   .membresias .plan-card.plan-destacado {
     transform: scale(1.04);
@@ -1368,25 +1470,44 @@ p {
   }
 }
 @media (max-width: 576px) {
-  .membresias .plan-precio {
-    font-size: 7rem;
+  .membresias-header h1 {
+    font-size: 2rem;
   }
-  .membresias .plan-header h3 {
-    font-size: 1.35rem;
+  .membresias-header p {
+    font-size: 1.15rem;
+    max-width: 320px;
+    margin-inline: auto;
+    line-height: 1.5;
   }
   .membresias .planes-grid {
     grid-template-columns: 1fr;
     gap: 1.8rem;
   }
   .membresias .plan-card {
-    max-width: 390px;
-    padding: 2.2rem 1.8rem;
+    max-width: 340px;
+    margin-inline: auto;
+    padding: 1.8rem 1.4rem;
+  }
+  .membresias .plan-header h3 {
+    font-size: 1.45rem;
+    font-weight: 600;
+  }
+  .membresias .plan-card .plan-precio {
+    font-size: 1.9rem;
+    margin: 1rem 0;
+  }
+  .membresias .plan-card .plan-precio span {
+    font-size: 0.9rem;
+  }
+  .membresias .plan-list li {
+    font-size: 1rem;
+    line-height: 1.6;
   }
   .membresias .plan-card.plan-destacado {
-    transform: none !important;
+    transform: none;
   }
   .membresias .plan-card.plan-destacado:hover {
-    transform: translateY(-4px) !important;
+    transform: translateY(-4px);
   }
 }
 /*RESPONSIVE BENEFICIOS*/
@@ -1635,6 +1756,21 @@ p {
 }
 
 /*RESPONSIVE*/
+@media (max-width: 1400px) {
+  .contacto-hero {
+    margin-top: 2rem;
+    padding: 4rem 0;
+  }
+  .contacto-hero .contacto {
+    min-height: 440px;
+  }
+  .contacto-hero .contacto-form {
+    padding: 2.5rem 2rem;
+  }
+  .contacto-hero .contacto-form textarea {
+    min-height: 160px;
+  }
+}
 @media (max-width: 992px) {
   .contacto {
     flex-direction: column;
@@ -1700,8 +1836,9 @@ p {
   }
   .canal-item {
     width: 100%;
-    max-width: 100%;
-    overflow: hidden;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 1.6rem;
   }
   .canal-item i {
     font-size: 2.2rem;

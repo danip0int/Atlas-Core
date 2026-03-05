@@ -25,134 +25,183 @@
   }
 
   .plan-card {
-    width: 100%;
-    max-width: 420px;
-    background: var(--color-bg-card);
-    color: var(--color-text);
-    padding: 2.5rem 2rem;
-    border-radius: 16px;
-    text-align: center;
-    transition:
-      transform 0.35s ease,
-      box-shadow 0.35s ease;
+ width: 100%;
+  max-width: 420px;
+  position: relative;
+  overflow: hidden;
 
-    &:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-    }
+  color: var(--color-text);
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  text-align: center;
 
-    .plan-header {
-      min-height: 70px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-end;
-      margin-bottom: 1.5rem;
+  background: linear-gradient(
+    160deg,
+    #3a3733 0%,
+    #2f2c29 60%,
+    #262320 100%
+  );
 
-      h3 {
-        font-size: 1.25rem;
-        margin-bottom: 0.25rem;
-        position: relative;
-        display: inline-block;
-        padding-bottom: 0.6rem;
+  border: 1px solid rgba(255,255,255,0.06);
 
-        &::after {
-          content: "";
-          position: absolute;
-          left: 50%;
-          bottom: 0;
-          width: 40px;
-          height: 2px;
-          background: linear-gradient(
-            90deg,
-            transparent,
-            var(--color-accent),
-            transparent
-          );
-          transform: translateX(-50%);
-          box-shadow: 0 0 8px rgba(235, 94, 40, 0.6);
-        }
-      }
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 20%;
+    width: 60%;
+    height: 3px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--color-accent),
+      transparent
+    );
+    box-shadow: 0 0 10px rgba(235,94,40,0.6);
+  }
 
-      .elegido {
-        display: inline-block;
-        padding: 0.3rem 0.8rem;
-        font-size: 0.75rem;
-        border-radius: 999px;
-        background: var(--color-accent);
-        color: #fff;
-        margin-bottom: 1rem;
-      }
-    }
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(
+        circle at 20% 10%,
+        rgba(255,255,255,0.07),
+        transparent 60%
+      );
+    opacity: .6;
+    pointer-events: none;
+  }
 
-    .plan-precio {
-      font-size: 2.4rem;
-      letter-spacing: -0.5px;
-      font-weight: 700;
-      margin: 1.5rem 0;
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow:
+      0 20px 40px rgba(0,0,0,0.45),
+      0 0 0 1px rgba(255,255,255,0.05);
+  }
 
-      span {
-        font-size: 0.9rem;
-        color: var(--color-muted);
-      }
-    }
+  .plan-header {
+    min-height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 1.5rem;
 
-    .plan-list {
-      margin-top: 1.5rem;
-      padding: 0;
-      list-style: none;
-      text-align: left;
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.25rem;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 0.6rem;
 
-      li {
-        margin-bottom: 0.5rem;
-        color: var(--color-muted);
-        position: relative;
-        padding-left: 1.2rem;
-
-        &::before {
-          content: "•";
-          position: absolute;
-          left: 0;
-          color: var(--color-accent);
-          font-size: 1.2rem;
-          line-height: 1;
-        }
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 40px;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--color-accent),
+          transparent
+        );
+        transform: translateX(-50%);
+        box-shadow: 0 0 8px rgba(235, 94, 40, 0.6);
       }
     }
 
-    .btn-plan {
-      margin-top: 1.5rem;
+    .elegido {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      font-size: 0.75rem;
+      border-radius: 999px;
+      background: var(--color-accent);
+      color: #fff;
+      margin-bottom: 1rem;
     }
-    &.plan-destacado {
-      background: linear-gradient(180deg, #1f1f1f, #0f0f0f);
-      transform: scale(1.08);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      z-index: 2;
-      padding: 3.2rem 2.2rem;
-      padding-top: 2.5rem;
-      box-shadow:
-        0 30px 60px rgba(0, 0, 0, 0.5),
-        0 0 0 1px rgba(235, 94, 40, 0.25);
+  }
 
-      &:hover {
-        transform: scale(1.04) translateY(-6px);
-      }
+  .plan-precio {
+    font-size: 2.4rem;
+    letter-spacing: -0.5px;
+    font-weight: 700;
+    margin: 1.5rem 0;
 
-      .plan-header h3::after {
-        width: 48px;
-        height: 3px;
-      }
+    span {
+      font-size: 0.9rem;
+      color: var(--color-muted);
+    }
+  }
 
-      .btn-primary {
-        background: #ff5a1f;
-        box-shadow: 0 12px 35px rgba(255, 90, 31, 0.45);
+  .plan-list {
+    margin-top: 1.5rem;
+    padding: 0;
+    list-style: none;
+    text-align: left;
 
-        &:hover {
-          background: #ff4710;
-        }
+    li {
+      margin-bottom: 0.5rem;
+      color: var(--color-muted);
+      position: relative;
+      padding-left: 1.2rem;
+
+      &::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--color-accent);
+        font-size: 1.2rem;
+        line-height: 1;
       }
     }
   }
+
+  .btn-plan {
+    margin-top: 1.5rem;
+  }
+
+  &.plan-destacado {
+    background: linear-gradient(180deg, #1f1f1f, #0f0f0f);
+
+    transform: scale(1.08);
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    z-index: 2;
+
+    padding: 3.2rem 2.2rem;
+    padding-top: 2.5rem;
+
+    box-shadow:
+      0 30px 60px rgba(0,0,0,0.5),
+      0 0 0 1px rgba(235,94,40,0.25);
+
+    &:hover {
+      transform: scale(1.04) translateY(-6px);
+    }
+
+    .plan-header h3::after {
+      width: 48px;
+      height: 3px;
+    }
+
+    .btn-primary {
+      background: #ff5a1f;
+      box-shadow: 0 12px 35px rgba(255, 90, 31, 0.45);
+
+      &:hover {
+        background: #ff4710;
+      }
+    }
+  }
+}
 }
 
 /*SECCIÓN BENEFICIOS*/
@@ -244,15 +293,54 @@
 
 /*RESPONSIVE*/
 
-@include tablet-break {
+@include desktop-break {
+
   .membresias {
+
     .planes-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
+      max-width: 1050px;
+      margin-inline: auto;
+      gap: 2.8rem;
     }
 
     .plan-card {
-      max-width: 100%;
+      max-width: 320px;
+      padding: 1.8rem 1.5rem;
+    }
+
+    .plan-precio {
+      font-size: 2rem;
+      margin: 1rem 0;
+    }
+
+    .plan-list {
+      margin-top: 1rem;
+
+      li {
+        margin-bottom: 0.4rem;
+      }
+    }
+
+    .plan-card.plan-destacado {
+      padding: 2.3rem 1.7rem;
+      transform: scale(1.05);
+    }
+
+  }
+
+}
+
+@include tablet-break {
+  .membresias {
+    .planes-grid {
+      display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 2rem;
+    }
+
+    .plan-card {
+      max-width: none;
+      width: 100%;
     }
 
     .plan-card.plan-destacado {
@@ -266,32 +354,61 @@
 }
 
 @include mobile-break {
+
   .membresias {
-    .plan-precio {
-      font-size: 7rem;
+    &-header {
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1.15rem;
+        max-width: 320px;
+        margin-inline: auto;
+        line-height: 1.5;
+      }
     }
 
-    .plan-header h3 {
-      font-size: 1.35rem;
-    }
     .planes-grid {
       grid-template-columns: 1fr;
       gap: 1.8rem;
     }
 
     .plan-card {
-      max-width: 390px;
-      padding: 2.2rem 1.8rem;
+      max-width: 340px;
+      margin-inline: auto;
+      padding: 1.8rem 1.4rem;
+    }
+    .plan-header h3 {
+      font-size: 1.45rem;
+      font-weight: 600;
+    }
+
+    .plan-card .plan-precio {
+      font-size: 1.9rem;
+      margin: 1rem 0;
+
+      span {
+        font-size: 0.9rem;
+      }
+    }
+
+    .plan-list li {
+      font-size: 1rem;
+      line-height: 1.6;
     }
 
     .plan-card.plan-destacado {
-      transform: none !important;
+      transform: none;
 
       &:hover {
-        transform: translateY(-4px) !important;
+        transform: translateY(-4px);
       }
     }
+
   }
+
 }
 
 /*RESPONSIVE BENEFICIOS*/

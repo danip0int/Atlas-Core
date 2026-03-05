@@ -246,6 +246,27 @@
 
 /*RESPONSIVE*/
 
+@include desktop-break {
+
+  .contacto-hero {
+    margin-top: 2rem;
+    padding: 4rem 0;
+  }
+
+  .contacto-hero .contacto {
+    min-height: 440px;
+  }
+
+  .contacto-hero .contacto-form {
+    padding: 2.5rem 2rem;
+  }
+
+  .contacto-hero .contacto-form textarea {
+    min-height: 160px;
+  }
+
+}
+
 @include tablet-break {
   .contacto {
     flex-direction: column;
@@ -327,9 +348,11 @@
 
   .canal-item {
     width: 100%;
-    max-width: 100%;
-    overflow: hidden;
+    max-width: 300px;
+    margin: 0 auto;   
+    padding: 1.6rem;  
   }
+
 
   .canal-item i {
     font-size: 2.2rem;
