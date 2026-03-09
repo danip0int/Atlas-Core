@@ -40,7 +40,7 @@
   .footer-logo {
     font-weight: 700;
     font-size: 1.2rem;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
     text-transform: uppercase;
   }
 
@@ -129,7 +129,16 @@
   .footer-centro {
     flex: 1.4;
   }
-
+  .footer-logo-img {
+    height: 170px;
+    width: auto;
+    filter: brightness(0) invert(1);
+  }
+  h3 span {
+    font-weight: 600;
+    opacity: 0.9;
+    color: var(--color-accent); /* paprika */
+  }
   .footer-izq,
   .footer-der {
     margin-top: 3.5rem;
