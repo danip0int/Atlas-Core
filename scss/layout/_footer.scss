@@ -146,6 +146,20 @@
 
   /*RESPONSIVE*/
 
+  @include tablet-break {
+    .footer-contenido {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 2.5rem;
+    }
+
+    .footer-lado {
+      flex: none;
+      max-width: 420px;
+    }
+  }
+
   @include mobile-break {
     .footer-contenido {
       flex-direction: column;
