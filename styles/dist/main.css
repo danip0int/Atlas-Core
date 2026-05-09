@@ -666,11 +666,24 @@ p {
   margin: 0;
 }
 .card {
+  /*TEXTO OCULTO CARDS INDEX*/
+}
+.card .card-extra {
+  display: none;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-top: 0.5rem;
+}
+.card .card-extra.visible {
+  display: block;
+}
+.card {
   /*RESPONSIVE*/
 }
 @media (max-width: 1400px) {
   .card {
     height: 460px;
+    width: 350px;
   }
   .card .card-img-top {
     height: 240px;
@@ -856,6 +869,24 @@ p {
   border-bottom: 1px solid var(--spicy-paprika);
 }
 
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  #stats {
+    gap: 1.5rem;
+  }
+  #stats div {
+    padding: 1.5rem;
+  }
+}
+@media (max-width: 576px) {
+  #stats {
+    flex-direction: column;
+    align-items: center;
+  }
+  #stats div {
+    width: 80%;
+  }
+}
 /* === PÁGINAS ===*/
 .entrenamiento-wrapper {
   max-width: 1500px;

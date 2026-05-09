@@ -55,11 +55,27 @@
   .card-title {
     margin: 0;
   }
+
+/*TEXTO OCULTO CARDS INDEX*/
+
+.card-extra {
+  display: none;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-top: 0.5rem;
+}
+
+.card-extra.visible {
+  display: block;
+}
+
+
   /*RESPONSIVE*/
 
   @include desktop-break {
     height: 460px;
-
+    width: 350px;
+    
     .card-img-top {
       height: 240px;
     }

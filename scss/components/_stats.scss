@@ -1,3 +1,6 @@
+@use "../utils/mixins" as *;
+
+
 #stats {
   display: flex;
   justify-content: center;
@@ -68,6 +71,30 @@
       color: var(--floral-white);
       padding-bottom: 0.5rem;
       border-bottom: 1px solid var(--spicy-paprika);
+    }
+  }
+}
+
+
+/* RESPONSIVE */
+
+@include tablet-break {
+  #stats {
+    gap: 1.5rem;
+
+    div {
+      padding: 1.5rem;
+    }
+  }
+}
+
+@include mobile-break {
+  #stats {
+    flex-direction: column;
+    align-items: center;
+
+    div {
+      width: 80%;
     }
   }
 }
