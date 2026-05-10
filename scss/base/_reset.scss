@@ -1,4 +1,4 @@
-@use '../base/fonts' as *;
+@use "../base/fonts" as *;
 
 * {
   margin: 0;
@@ -42,7 +42,12 @@ html::before {
   padding-bottom: 0.5rem;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: $font-title;
   font-weight: 700;
   line-height: 1.2;
@@ -64,3 +69,8 @@ p {
   font-size: clamp(0.95rem, 1vw, 1rem);
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

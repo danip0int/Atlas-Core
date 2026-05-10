@@ -148,6 +148,32 @@ doctype html>
           </div>
         </div>
       </section>
+      <section id="calculadora">
+        <h2>Entrenás fuerte, pero ¿Sabés cuánto necesitás comer? 🤔​</h2>
+        <p>
+          Calculá tus calorías diarias en segundos y ajustá tu alimentación a
+          tus objetivos reales. 💪
+        </p>
+        <input type="number" id="peso" placeholder="Ingresá tu peso" />
+        <input type="number" id="altura" placeholder="Ingresá tu altura (cm)" />
+        <input type="number" id="edad" placeholder="Ingresá tu edad" />
+        <select name="sexo" id="selectSexo">
+          <option value="" disabled selected>Sexo</option>
+          <option value="Masculino">Masculino</option>
+          <option value="Femenino">Femenino</option>
+        </select>
+        <select name="actividad" id="selectActividad">
+          <option value="" disabled selected>Nivel de actividad</option>
+          <option value="1.2">Sedentario</option>
+          <option value="1.375">Activbidad ligera</option>
+          <option value="1.55">Activididad moderada</option>
+          <option value="1.725">Actividad intensa</option>
+        </select>
+        <button id="btn-calcular" class="btn-primary">Calcular</button>
+        <div id="resultado">
+          <p>Tu requerimiento calórico diario es de:</p>
+        </div>
+      </section>
       <section class="disciplinas py-2">
         <div class="container">
           <div class="section-title title-center">
@@ -281,5 +307,6 @@ doctype html>
       integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
       crossorigin="anonymous"
     ></script>
+    <script src="/js/script/entrenamiento.js"></script>
   </body>
 </html>

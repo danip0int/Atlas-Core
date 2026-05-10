@@ -37,4 +37,3 @@ cardsIndex.addEventListener("click", (event) => {
        }
     }
 })
-
