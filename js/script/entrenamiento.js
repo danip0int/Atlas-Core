@@ -72,81 +72,46 @@ inputsNumericos.forEach(input => {
 });
 
 
+/* MODAL ENTRENAMIENTOS */
 
-/* FILTRO ENTRENAMIENTOS */
+const modalCards = document.querySelector("#modal-cards");
+const modalRutinas = document.getElementById("modal-rutinas");
+const modalCerrar = document.getElementById("modal-cerrar");
 
-const contentCards = document.getElementById("contentCards");
-const btnFilter = document.querySelector(".btn-filter");
+async function mostrarRutinas(categoria) {
+    try{
+        const rutinas = await fetch("../data/rutinas.json");
+        const datos = await rutinas.json();
+        const filtradas = datos.filter((rutina) => rutina.categoria === categoria );
+        modalCards.innerHTML = "";
 
-const rutinas = [
-    { 
-        nombre: "Tren Superior - Espalda y Bíceps", 
-        categoria: "Fuerza", 
-        descripcion: "Rutina enfocada en dorsales, trapecio y bíceps. Incluye dominadas, remo con barra, jalón al pecho y curl con mancuernas." 
-    },
-    { 
-        nombre: "Tren Superior - Pecho y Tríceps", 
-        categoria: "Fuerza", 
-        descripcion: "Trabajo de pectorales, hombros y tríceps. Press de banca, aperturas, fondos y extensiones en polea." 
-    },
-    { 
-        nombre: "Circuito HIIT - Cuerpo Completo", 
-        categoria: "Cardio", 
-        descripcion: "Intervalos de alta intensidad con ejercicios de peso corporal. Burpees, saltos, mountain climbers y sprints en cinta." 
-    },
-    { 
-        nombre: "Cardio Funcional - Resistencia", 
-        categoria: "Cardio", 
-        descripcion: "Trabajo aeróbico sostenido combinado con movimientos funcionales. Ideal para mejorar capacidad cardiovascular y quemar grasa." 
-    },
-    { 
-        nombre: "Movilidad - Cadera y Columna", 
-        categoria: "Movilidad", 
-        descripcion: "Sesión de estiramientos dinámicos y estáticos enfocada en cadera, lumbar y torácica. Ideal para recuperación y prevención de lesiones." 
-    },
-    { 
-        nombre: "Recuperación Activa - Cuerpo Completo", 
-        categoria: "Movilidad", 
-        descripcion: "Foam roller, elongación profunda y respiración. Pensada para el día posterior a sesiones intensas de entrenamiento." 
-    },
-    { 
-        nombre: "Boxeo - Técnica de Golpes", 
-        categoria: "Boxeo", 
-        descripcion: "Combinaciones básicas y avanzadas en pera y bolsa. Jab, cross, gancho y uppercut con foco en coordinación y potencia." 
-    },
-    { 
-        nombre: "Boxeo - Acondicionamiento Físico", 
-        categoria: "Boxeo", 
-        descripcion: "Circuito de boxeo orientado a la resistencia. Soga, shadow boxing, trabajo en bolsa y ejercicios de core específicos." 
-    }
-];
-
-function cardsRender(array) {
-    contentCards.innerHTML = "";
-    
-    array.forEach((rutine) => {
-        
-        contentCards.innerHTML += `
+        filtradas.forEach((add) => {
+            modalCards.innerHTML+= `
     <div class="rutina-card">
-        <h3>${rutine.nombre}</h3>
-        <span>${rutine.categoria}</span>
-        <p>${rutine.descripcion}</p>
-    </div>
-`;
+        <h3>${add.nombre}</h3>
+        <span>${add.categoria}</span>
+        <p>${add.descripcion}</p>
+    </div>`;
+        });
+
+        modalRutinas.classList.add("visible");
+        console.log(filtradas);
+
+    } catch(error){
+
+    }
+}
+
+
+ document.addEventListener("click", (event) => {
+    const categoria = event.target.closest("[data-categoria]")?.dataset.categoria;
+    if (categoria) {
+        mostrarRutinas(categoria);
+    }
 });
 
-}
-
-cardsRender(rutinas);
-
-btnFilter.addEventListener("click", (event) => {
-    const categoria = event.target.dataset.categoria;
-if (categoria === "Todos") {
-    cardsRender(rutinas);
-}else{
-    let filtroRutina = rutinas.filter(el => el.categoria === categoria )
-    cardsRender(filtroRutina);
-}
+modalCerrar.addEventListener("click", (event) => {
+    modalRutinas.classList.remove("visible");
 });
 
 

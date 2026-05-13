@@ -96,18 +96,10 @@ doctype html>
       </nav>
     </header>
     <main>
-      <div class="btn-filter">
-        <button data-categoria="Todos">Todos</button>
-        <button data-categoria="Fuerza">Fuerza</button>
-        <button data-categoria="Cardio">Cardio</button>
-        <button data-categoria="Movilidad">Movilidad</button>
-        <button data-categoria="Boxeo">Boxeo</button>
-      </div>
-      <div id="contentCards"></div>
       <section class="entrenamientos py-5">
         <div class="entrenamiento-wrapper">
           <div class="container-fluid px-5">
-            <div class="row align-items-center mb-5">
+            <div class="row align-items-center mb-5" data-categoria="Fuerza">
               <div class="col-md-7">
                 <img
                   src="../assets/remomancuerna.webp"
@@ -124,7 +116,7 @@ doctype html>
                 </p>
               </div>
             </div>
-            <div class="row align-items-center mb-5 flex-md-row-reverse">
+            <div class="row align-items-center mb-5 flex-md-row-reverse" data-categoria="Fuerza">
               <div class="col-md-7">
                 <img
                   src="../assets/hombromancuerna.webp"
@@ -141,7 +133,7 @@ doctype html>
                 </p>
               </div>
             </div>
-            <div class="row align-items-center mb-5">
+            <div class="row align-items-center mb-5" data-categoria="Movilidad">
               <div class="col-md-7">
                 <img
                   src="../assets/entrenamientomovilidad.webp"
@@ -161,6 +153,7 @@ doctype html>
           </div>
         </div>
       </section>
+      
       <section id="calculadora">
         <h2>Entrenás fuerte, pero ¿Sabés cuánto necesitás comer? 🤔​</h2>
         <p>
@@ -194,7 +187,7 @@ doctype html>
           </div>
           <div class="row g-4">
             <div class="col-md-6">
-              <div class="card disciplina-card text-white">
+              <div class="card disciplina-card text-white" data-categoria="Fuerza" >
                 <img
                   src="../assets/entrenamientogym.webp"
                   class="card-img"
@@ -208,7 +201,7 @@ doctype html>
               </div>
             </div>
             <div class="col-md-6">
-              <div class="card disciplina-card text-white">
+              <div class="card disciplina-card text-white" data-categoria="Boxeo">
                 <img
                   src="../assets/peraboxeo.webp"
                   class="card-img"
@@ -222,7 +215,7 @@ doctype html>
               </div>
             </div>
             <div class="col-md-6">
-              <div class="card disciplina-card text-white">
+              <div class="card disciplina-card text-white" data-categoria="Fuerza">
                 <img
                   src="../assets/levantamientobarra.webp"
                   class="card-img"
@@ -236,7 +229,7 @@ doctype html>
               </div>
             </div>
             <div class="col-md-6">
-              <div class="card disciplina-card text-white">
+              <div class="card disciplina-card text-white" data-categoria="Cardio">
                 <img
                   src="../assets/levantamientopesarusa.webp"
                   class="card-img"
@@ -252,6 +245,13 @@ doctype html>
           </div>
         </div>
       </section>
+      <div id="modal-rutinas" class="modal-rutinas">
+  <div class="modal-contenido">
+    <button id="modal-cerrar" class="modal-cerrar">&times;</button>
+    <h3 id="modal-titulo">Rutinas disponibles</h3>
+    <div id="modal-cards"></div>
+  </div>
+</div>
     </main>
     <footer class="footer footer-minimal">
       <div class="footer-lineas">
