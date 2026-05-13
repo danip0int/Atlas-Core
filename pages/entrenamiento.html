@@ -16,6 +16,11 @@ doctype html>
       rel="stylesheet"
     />
     <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
@@ -91,6 +96,14 @@ doctype html>
       </nav>
     </header>
     <main>
+      <div class="btn-filter">
+        <button data-categoria="Todos">Todos</button>
+        <button data-categoria="Fuerza">Fuerza</button>
+        <button data-categoria="Cardio">Cardio</button>
+        <button data-categoria="Movilidad">Movilidad</button>
+        <button data-categoria="Boxeo">Boxeo</button>
+      </div>
+      <div id="contentCards"></div>
       <section class="entrenamientos py-5">
         <div class="entrenamiento-wrapper">
           <div class="container-fluid px-5">
@@ -306,6 +319,10 @@ doctype html>
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
       integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
       crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
     ></script>
     <script src="/js/script/entrenamiento.js"></script>
   </body>
