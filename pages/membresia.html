@@ -107,12 +107,12 @@
                 <li>Clases grupales básicas</li>
                 <li>Uso de vestuarios</li>
               </ul>
-              <a href="#" class="btn-primary btn-plan">Elegir plan</a>
+              <a href="#" class="btn-primary btn-plan" data-plan="PRO" data-precio="45000">Elegir plan</a>
             </article>
             <article class="plan-card plan-destacado">
               <header class="plan-header">
                 <span class="elegido">Más elegido</span>
-                <h3>Plan Premium</h3>
+                <h3>Plan ATLAS</h3>
               </header>
               <div class="plan-precio">$75.000 <span>/ mes</span></div>
               <ul class="plan-list">
@@ -121,11 +121,11 @@
                 <li>Boxeo y entrenamiento guiado</li>
                 <li>Acceso a spa y vestuarios</li>
               </ul>
-              <a href="#" class="btn-primary btn-plan">Elegir plan</a>
+              <a href="#" class="btn-primary btn-plan" data-plan="ATLAS" data-precio="75000">Elegir plan</a>
             </article>
             <article class="plan-card">
               <header class="plan-header">
-                <h3>Plan PRO</h3>
+                <h3>Plan PREMIUM</h3>
               </header>
               <p class="plan-precio">$60.000 / mes</p>
               <ul class="plan-list">
@@ -134,7 +134,7 @@
                 <li>Clases exclusivas</li>
                 <li>Seguimiento mensual</li>
               </ul>
-              <a href="#" class="btn-primary btn-plan">Elegir plan</a>
+              <a href="#" class="btn-primary btn-plan" data-plan="Premium" data-precio="60000">Elegir plan</a>
             </article>
           </div>
         </div>
@@ -142,33 +142,62 @@
       <section class="beneficios">
         <div class="container">
           <header class="beneficios-header">
-            <h2>Beneficios adicionales</h2>
-            <p>Todo lo que acompaña tu entrenamiento</p>
+            <h2>Servicios adicionales</h2>
+            <p>Todo para acompañar y mejorar al detalle tu entrenamiento.</p>
           </header>
           <div class="beneficios-grid">
-            <div class="beneficio-item">
+            <div class="beneficio-item" data-servicio="Nutrición" data-precio="20000">
               <i class="bi bi-apple"></i>
               <h3>Nutrición</h3>
               <p>Asesoramiento nutricional para potenciar tu rendimiento.</p>
+              <span class="servicio-precio">$20.000 / mes</span>
+  <button class="btn-agregar">Agregar</button>
             </div>
-            <div class="beneficio-item">
+            <div class="beneficio-item" data-servicio="Masajes" data-precio="15000">
               <i class="bi bi-heart-pulse"></i>
               <h3>Masajes</h3>
               <p>Sesiones de recuperación muscular y relajación.</p>
+              <span class="servicio-precio">$15.000 / mes</span>
+  <button class="btn-agregar">Agregar</button>
             </div>
-            <div class="beneficio-item">
+            <div class="beneficio-item" data-servicio="App de Entrenamiento" data-precio="5000">
               <i class="bi bi-phone"></i>
               <h3>App de entrenamiento</h3>
               <p>Planes personalizados y seguimiento desde tu celular.</p>
+              <span class="servicio-precio">Gratis!</span>
+  <button class="btn-agregar">Agregar</button>
             </div>
-            <div class="beneficio-item">
+            <div class="beneficio-item" data-servicio="Seguimiento" data-precio="8000">
               <i class="bi bi-graph-up"></i>
               <h3>Seguimiento</h3>
               <p>Evaluaciones periódicas para medir tu progreso.</p>
+              <span class="servicio-precio">$10.000 / mes</span>
+  <button class="btn-agregar">Agregar</button>
             </div>
           </div>
         </div>
       </section>
+      <section id="carrito">
+        <h2>Tu suscripción</h2>
+        <div id="carrito-plan"></div>
+        <div id="carrito-extras"></div>
+        <p>Total: <span id="carrito-total">$0</span></p>
+        <button id="btn-contratar" class="btn-primary">Contratar</button>
+        <section id="formulario-contacto">
+    <h2>Completá tus datos</h2>
+    <input type="text" id="input-nombre" placeholder="Nombre completo" />
+    <input type="email" id="input-mail" placeholder="Email" />
+    <input type="tel" id="input-tel" placeholder="Teléfono" />
+    <button id="btn-confirmar" class="btn-primary">Confirmar suscripción</button>
+  </section>
+      </section>
+<div id="modal-confirmacion" class="modal-rutinas">
+  <div class="modal-contenido">
+    <h3>¡Bienvenido a Atlas Core! 🎉</h3>
+    <p id="modal-mensaje"></p>
+    <a href="../index.html" class="btn-primary">Volver al inicio</a>
+  </div>
+</div>
     </main>
     <footer class="footer footer-minimal">
       <div class="footer-lineas">
@@ -237,5 +266,6 @@
       integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
       crossorigin="anonymous"
     ></script>
+    <script src="/js/script/membresia.js"></script>
   </body>
 </html>
