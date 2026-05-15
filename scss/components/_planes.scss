@@ -58,3 +58,41 @@
   }
 }
 
+.btn-toggle-carrito {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(235, 94, 40, 0.4);
+  transition: transform $transition-fast;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.btn-eliminar {
+  background: transparent;
+  border: none;
+  color: var(--color-accent);
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+  padding: 0;
+  
+  &:hover {
+    color: #fff;
+  }
+}
+

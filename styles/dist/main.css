@@ -1103,6 +1103,42 @@ input[type=number]::-webkit-outer-spin-button {
   gap: 1rem;
 }
 
+.btn-toggle-carrito {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(235, 94, 40, 0.4);
+  transition: transform 0.25s ease;
+}
+.btn-toggle-carrito:hover {
+  transform: scale(1.1);
+}
+
+.btn-eliminar {
+  background: transparent;
+  border: none;
+  color: var(--color-accent);
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+  padding: 0;
+}
+.btn-eliminar:hover {
+  color: #fff;
+}
+
 /* === PÁGINAS ===*/
 .entrenamiento-wrapper {
   max-width: 1500px;
@@ -1651,8 +1687,8 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 2.5rem 2rem;
   border-radius: 16px;
   text-align: center;
-  background: linear-gradient(160deg, #3a3733 0%, #2f2c29 60%, #262320 100%);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 .membresias .plan-card::after {
@@ -1670,11 +1706,12 @@ input[type=number]::-webkit-outer-spin-button {
   position: absolute;
   inset: 0;
   background: radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.07), transparent 60%);
-  opacity: 0.6;
   pointer-events: none;
 }
 .membresias .plan-card:hover {
   transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.03);
+  opacity: 0.9;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 .membresias .plan-card .plan-header {
@@ -1830,6 +1867,30 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 0.9rem;
   color: var(--color-muted);
   line-height: 1.5;
+}
+.beneficios .beneficio-item .servicio-precio {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-top: 0.5rem;
+}
+.beneficios .beneficio-item .btn-agregar {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-accent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
+  color: var(--color-text-main);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+.beneficios .beneficio-item .btn-agregar:hover {
+  background: var(--color-accent);
+  color: #fff;
 }
 .beneficios .beneficio-item:hover {
   transform: translateY(-4px);

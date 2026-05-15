@@ -30,6 +30,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="../styles/dist/main.css" />
     <title>Planes de entrenamiento y membresías | Atlas Core</title>
   </head>
@@ -107,7 +108,7 @@
                 <li>Clases grupales básicas</li>
                 <li>Uso de vestuarios</li>
               </ul>
-              <a href="#" class="btn-primary btn-plan" data-plan="PRO" data-precio="45000">Elegir plan</a>
+              <a href="#" class="btn-primary btn-plan" data-plan="Plan PRO" data-precio="45000">Elegir plan</a>
             </article>
             <article class="plan-card plan-destacado">
               <header class="plan-header">
@@ -121,7 +122,7 @@
                 <li>Boxeo y entrenamiento guiado</li>
                 <li>Acceso a spa y vestuarios</li>
               </ul>
-              <a href="#" class="btn-primary btn-plan" data-plan="ATLAS" data-precio="75000">Elegir plan</a>
+              <a href="#" class="btn-primary btn-plan" data-plan=" Plan ATLAS" data-precio="75000">Elegir plan</a>
             </article>
             <article class="plan-card">
               <header class="plan-header">
@@ -134,7 +135,7 @@
                 <li>Clases exclusivas</li>
                 <li>Seguimiento mensual</li>
               </ul>
-              <a href="#" class="btn-primary btn-plan" data-plan="Premium" data-precio="60000">Elegir plan</a>
+              <a href="#" class="btn-primary btn-plan" data-plan="Plan PREMIUM" data-precio="60000">Elegir plan</a>
             </article>
           </div>
         </div>
@@ -160,7 +161,7 @@
               <span class="servicio-precio">$15.000 / mes</span>
   <button class="btn-agregar">Agregar</button>
             </div>
-            <div class="beneficio-item" data-servicio="App de Entrenamiento" data-precio="5000">
+            <div class="beneficio-item" data-servicio="App de Entrenamiento" data-precio="0">
               <i class="bi bi-phone"></i>
               <h3>App de entrenamiento</h3>
               <p>Planes personalizados y seguimiento desde tu celular.</p>
@@ -185,8 +186,15 @@
         <button id="btn-contratar" class="btn-primary">Contratar</button>
         <section id="formulario-contacto">
     <h2>Completá tus datos</h2>
-    <input type="text" id="input-nombre" placeholder="Nombre completo" />
+    <label for="input-nombre">Nombre</label>
+    <input type="text" id="input-nombre" placeholder="Nombre" />
+    <label for="input-apellido">Apellido</label>
+    <input type="text" id="input-apellido" placeholder="Apellido">
+    <label for="input-dni">DNI</label>
+    <input type="number" id="input-dni" placeholder="DNI"/>
+    <label for="input-mail">E-mail</label>
     <input type="email" id="input-mail" placeholder="Email" />
+    <label for="input-tel">Teléfono</label>
     <input type="tel" id="input-tel" placeholder="Teléfono" />
     <button id="btn-confirmar" class="btn-primary">Confirmar suscripción</button>
   </section>
@@ -195,7 +203,7 @@
   <div class="modal-contenido">
     <h3>¡Bienvenido a Atlas Core! 🎉</h3>
     <p id="modal-mensaje"></p>
-    <a href="../index.html" class="btn-primary">Volver al inicio</a>
+    <button id="modal-conf-cerrar" class="modal-cerrar">&times;</button>
   </div>
 </div>
     </main>
@@ -266,6 +274,10 @@
       integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
       crossorigin="anonymous"
     ></script>
+    <button id="btn-toggle-carrito" class="btn-toggle-carrito">
+  <i class="bi bi-bag"></i>
+</button>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="/js/script/membresia.js"></script>
   </body>
 </html>
