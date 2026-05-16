@@ -32,12 +32,14 @@ document.addEventListener("click", (event) => {
     
     if (plan) {
         event.preventDefault();
+        document.getElementById("btn-toggle-carrito").style.display = "flex";
         planSeleccionado.nombre = plan;
         planSeleccionado.precio = precioPlan;
         actualizarCarrito();
     }
 
     if (servicio && event.target.classList.contains("btn-agregar")) {
+        document.getElementById("btn-toggle-carrito").style.display = "flex";
     const yaAgregado = extrasSeleccionados.find(extra => extra.nombre === servicio);
     if (!yaAgregado) {
         extrasSeleccionados.push({nombre: servicio, precio: Number(precioServicio)});
@@ -71,6 +73,9 @@ const inputApellido = document.getElementById("input-apellido");
 const inputDNI = document.getElementById("input-dni");
 const inputMail = document.getElementById("input-mail");
 const inputTel = document.getElementById("input-tel");
+const campoTitular = document.getElementById("input-titular");
+const campoVencimiento = document.getElementById("input-vencimiento");
+const campoDomicilio = document.getElementById("input-domicilio");
 
 
 
@@ -80,12 +85,24 @@ let campoApellido = inputApellido.value;
 let campoDNI = Number(inputDNI.value);
 let campoTel = Number(inputTel.value);
 let campoMail = inputMail.value;
+const campotarjeta = document.getElementById("input-tarjeta").value;
+const campotitular = campoTitular.value;
+const campoVencimientoVal = campoVencimiento.value;
+const campoDomicilioVal = campoDomicilio.value;
+const eleccionPago = selectPago.value;
 
 
 try{
 
-   if (campoNombre === "" || campoApellido === "" || campoDNI === "" || campoMail === "" || campoTel === "" || !campoMail.includes("@")) {
+   if (campoNombre === "" || campoApellido === "" || campoDNI === "" || campoMail === "" || campoTel === "" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(campoMail) || selectPago.value === "") {
     throw new Error("Completá todos los campos correctamente"); 
+}
+console.log(eleccionPago);
+if (eleccionPago === "credito" || eleccionPago === "debito") {
+    if (campotitular === "" || campotarjeta === "" || campoVencimientoVal === "" || campoDomicilioVal === "" ) {
+        throw new Error("Los datos ingresados no son válidos. Intente nuevamente.");
+    }
+    
 }
 
 Toastify({
@@ -98,6 +115,24 @@ style: { background: "#eb5e28" }
 
 document.getElementById("modal-confirmacion").classList.add("visible");
 document.getElementById("modal-mensaje").innerHTML = `Hola ${campoNombre}, tu suscripción al ${planSeleccionado.nombre} fue procesada. Te enviamos los detalles a ${campoMail}.`;
+document.getElementById("carrito").classList.remove("visible");
+document.getElementById("btn-toggle-carrito").style.display = "none";
+planSeleccionado = {nombre: null, precio: null};
+extrasSeleccionados = [];
+document.getElementById("formulario-contacto").classList.remove("visible");
+document.getElementById("carrito-plan").innerHTML = "";
+document.getElementById("carrito-extras").innerHTML = "";
+document.getElementById("carrito-total").textContent = "$0";
+inputNombre.value = "";
+inputApellido.value = "";
+inputDNI.value = "";
+inputMail.value = "";
+inputTel.value = "";
+selectPago.value = "";
+document.getElementById("input-tarjeta").value = "";
+document.getElementById("input-titular").value = "";
+document.getElementById("input-vencimiento").value = "";
+document.getElementById("input-domicilio").value = "";
 } catch(error){
 Toastify({
         text: error.message,
@@ -122,3 +157,51 @@ carritoExtras.addEventListener("click", (event) => {
 
 
 btnConfirmar.addEventListener("click", confirmarCompra);
+
+
+const selectPago = document.getElementById("select-pago");
+const campoTarjeta = document.getElementById("campos-tarjeta");
+const camposTransferencia = document.getElementById("campos-transferencia");
+
+
+selectPago.addEventListener("change", () =>{
+    campoTarjeta.style.display = "none";
+camposTransferencia.style.display = "none";
+
+const eleccionPago = selectPago.value;
+
+if (eleccionPago === "credito" || eleccionPago === "debito") {
+    campoTarjeta.style.display = "flex";
+} else{
+    camposTransferencia.style.display = "flex";
+}
+
+})
+
+
+
+document.getElementById("input-tarjeta").addEventListener("input", (event) => {
+    let valor = event.target.value.replace(/\D/g, "");
+    valor = valor.substring(0, 16);
+    event.target.value = valor.replace(/(.{4})/g, "$1 ").trim();
+});
+
+document.getElementById("input-dni").addEventListener("keydown", (event) => {
+    if (!/[0-9]/.test(event.key) && event.key !== "Backspace" && event.key !== "Tab") {
+        event.preventDefault();
+    }
+});
+
+document.getElementById("input-tel").addEventListener("keydown", (event) => {
+    if (!/[0-9]/.test(event.key) && event.key !== "Backspace" && event.key !== "Tab") {
+        event.preventDefault();
+    }
+});
+document.getElementById("input-vencimiento").addEventListener("input", (event) => {
+    let valor = event.target.value.replace(/\D/g, "");
+    valor = valor.substring(0, 4);
+    if (valor.length >= 2) {
+        valor = valor.substring(0, 2) + "/" + valor.substring(2);
+    }
+    event.target.value = valor;
+});

@@ -56,9 +56,40 @@
       gap: 1rem;
     }
   }
+
+  #campos-tarjeta,
+#campos-transferencia {
+  display: none;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+input, select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: $radius-sm;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--color-bg-soft);
+  color: var(--color-text-main);
+  font-size: 0.9rem;
+}
+
+label {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--color-accent);
+  margin-bottom: 1rem;
+}
 }
 
 .btn-toggle-carrito {
+  display: none;
   position: fixed;
   bottom: 2rem;
   right: 2rem;
@@ -71,7 +102,6 @@
   font-size: 1.4rem;
   cursor: pointer;
   z-index: 9999;
-  display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 8px 20px rgba(235, 94, 40, 0.4);
@@ -96,3 +126,7 @@
   }
 }
 
+#campos-tarjeta,
+#campos-transferencia {
+  display: none;
+}

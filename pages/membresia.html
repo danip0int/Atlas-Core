@@ -191,11 +191,34 @@
     <label for="input-apellido">Apellido</label>
     <input type="text" id="input-apellido" placeholder="Apellido">
     <label for="input-dni">DNI</label>
-    <input type="number" id="input-dni" placeholder="DNI"/>
+    <input type="text" id="input-dni" maxlength="8" placeholder="DNI"/>
     <label for="input-mail">E-mail</label>
     <input type="email" id="input-mail" placeholder="Email" />
     <label for="input-tel">Teléfono</label>
-    <input type="tel" id="input-tel" placeholder="Teléfono" />
+    <input type="tel" id="input-tel" maxlength="12" placeholder="Teléfono" />
+    <label>Método de pago</label>
+<select id="select-pago">
+  <option value="" disabled selected>Seleccioná un método</option>
+  <option value="debito">Tarjeta de débito</option>
+  <option value="credito">Tarjeta de crédito</option>
+  <option value="transferencia">Transferencia bancaria</option>
+</select>
+
+<div id="campos-tarjeta">
+  <label>Número de tarjeta</label>
+  <input type="text" id="input-tarjeta" placeholder="XXXX XXXX XXXX XXXX" />
+  <label>Titular de la tarjeta</label>
+<input type="text" id="input-titular" placeholder="Nombre como figura en la tarjeta" />
+<label>Vencimiento</label>
+<input type="text" id="input-vencimiento" placeholder="MM/AA" />
+<label>Domicilio</label>
+<input type="text" id="input-domicilio" placeholder="Calle y número" />
+</div>
+
+<div id="campos-transferencia">
+  <p>CBU: 0000003100012345678901</p>
+  <p>Alias: ATLAS.CORE.GYM</p>
+</div>
     <button id="btn-confirmar" class="btn-primary">Confirmar suscripción</button>
   </section>
       </section>
