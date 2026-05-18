@@ -1,9 +1,11 @@
 @use "../base/variables" as *;
+@use "../utils/mixins" as *;
 
 #calculadora {
   max-width: 520px;
   margin: 4rem auto;
   padding: 2.5rem;
+  overflow: hidden;
   background: var(--color-bg-card);
   border-radius: $radius-lg;
   border: 1px solid rgba(255, 255, 255, 0.07);
@@ -50,6 +52,28 @@
 
     &.visible {
       display: block;
+    }
+  }
+}
+
+
+/* RESPONSIVE */
+
+@include tablet-break {
+  #calculadora {
+    max-width: 90%;
+    margin: 2rem auto;
+  }
+}
+
+@include mobile-break {
+  #calculadora {
+    max-width: 100%;
+    margin: 1.5rem 1rem;
+    padding: 1.5rem 1rem;
+
+    select {
+      width: 100%;
     }
   }
 }

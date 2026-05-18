@@ -21,15 +21,11 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="../styles/dist/main.css" />
     <title>Contacto y reservas | Atlas Core Mar del Plata</title>
   </head>
@@ -95,10 +91,10 @@
             <h2>Contactános</h2>
             <p>Escribinos y te respondemos a la brevedad</p>
             <form>
-              <input type="text" placeholder="Nombre" />
-              <input type="email" placeholder="Email" />
-              <textarea placeholder="Mensaje"></textarea>
-              <button type="submit" class="btn-primary btn-form">Enviar</button>
+              <input type="text" placeholder="Nombre" id="input-nombre"/>
+              <input type="email" placeholder="Email" id="input-email"/>
+              <textarea placeholder="Mensaje" id="input-mensaje"></textarea>
+              <button type="submit" class="btn-primary btn-form" id="btn-enviar">Enviar</button>
             </form>
           </div>
           <div class="contacto-img">
@@ -154,6 +150,13 @@
           ></iframe>
         </div>
       </section>
+      <div id="modal-contacto" class="modal-rutinas">
+  <div class="modal-contenido">
+    <button id="modal-contacto-cerrar" class="modal-cerrar">&times;</button>
+    <h3>¡Mensaje enviado! 💪</h3>
+    <p>Gracias <span id="modal-contacto-nombre"></span>, te respondemos a la brevedad en <span id="modal-contacto-email"></span>.</p>
+  </div>
+</div>
     </main>
     <footer class="footer footer-minimal">
       <div class="footer-lineas">
@@ -222,5 +225,7 @@
       integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
       crossorigin="anonymous"
     ></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="/js/script/contacto.js"></script>
   </body>
 </html>
