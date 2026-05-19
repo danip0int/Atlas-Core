@@ -5,7 +5,8 @@ function animarContador(id, target) {
     let actual = 0;
    const intervaloAnimado = setInterval(() => {
     actual = actual + 1;
-    document.getElementById(id).textContent = actual;
+    const sufijo = id === "stat-satisfaccion" ? "%" : "";
+document.getElementById(id).textContent = actual + sufijo;
     if (actual >= target) {
         clearInterval(intervaloAnimado);
         

@@ -53,3 +53,44 @@ btnEnviar.addEventListener("click", enviarFormulario);
 modalCerrar.addEventListener("click", () => {
     modalContacto.classList.remove("visible");
 });
+
+
+const horarios = {
+    Lunes: { apertura: 6, cierre: 22 },
+    Martes: { apertura: 6, cierre: 22 },
+    Miércoles: { apertura: 6, cierre: 22 },
+    Jueves: { apertura: 6, cierre: 22 },
+    Viernes: { apertura: 6, cierre: 22 },
+    Sábado: { apertura: 7, cierre: 17 },
+    Domingo: { apertura: null, cierre: null, cerrado: true },
+    Feriados: {apertura: 6, cierre: 17}
+};
+
+function verificarHorario() {
+    const hoy = new Date();
+    const numeroDia = hoy.getDay();
+    const horaActual = hoy.getHours();
+    const diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+const nombreDia = diasSemana[numeroDia];
+    if (horarios[nombreDia].cerrado === true) {
+        document.getElementById("estado-gym").textContent = "Hoy no abrimos. Nuestro horario es de lunes a viernes 6:00 a 22:00, sábados 7:00 a 17:00.";
+        
+    } else if (horaActual >= horarios[nombreDia].apertura && horaActual < horarios[nombreDia].cierre) {
+        document.getElementById("estado-gym").textContent = "¡Estamos abiertos! Podés acercarte o escribirnos por WhatsApp al +54 223 165-4970.";
+    } else {
+        document.getElementById("estado-gym").textContent = "Estamos cerrados. Mañana te esperamos en nuestro horario habitual.";
+}
+};
+
+
+function tablaHorarios() {
+
+    Object.entries(horarios).forEach(([dia, datos]) => {
+    const horario = datos.cerrado ? "Cerrado." : `${datos.apertura}:00 hs - ${datos.cierre}:00 hs`;
+    document.getElementById("tabla-horarios").innerHTML += `<p><strong>${dia}</strong> : ${horario}</p>`;
+});
+    
+}
+
+verificarHorario();
+tablaHorarios();
