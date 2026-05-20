@@ -74,6 +74,7 @@
 .modal-rutinas {
   display: none;
   position: fixed;
+  overflow: hidden;
   inset: 0;
   background: rgba(0, 0, 0, 0.75);
   z-index: 9999;
@@ -87,6 +88,7 @@
   .modal-contenido {
     background: var(--color-bg-card);
     border-radius: $radius-lg;
+    overflow: hidden;
     padding: 2rem;
     max-width: 700px;
     width: 90%;

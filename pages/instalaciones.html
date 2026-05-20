@@ -113,7 +113,7 @@
           </div>
           <div class="galeria-grid">
             <div class="galeria-item alta">
-              <div class="galeria-img">
+              <div class="galeria-img" data-src="../assets/aquagymejercicio.webp" data-titulo="Aquagym">
                 <img
                   src="../assets/aquagymejercicio.webp"
                   alt="mujeres haciendo ejercico en piscina"
@@ -128,7 +128,7 @@
               </p>
             </div>
             <div class="galeria-item baja">
-              <div class="galeria-img">
+              <div class="galeria-img" data-src="../assets/salademaquinas.webp" data-titulo="Sala de máquinas">
                 <img
                   src="../assets/salademaquinas.webp"
                   alt="área de máquinas gym"
@@ -142,7 +142,7 @@
                 fuerza y musculación guiados.
               </p>
             </div>
-            <div class="galeria-item">
+            <div class="galeria-item" data-src="../assets/crossfit.webp" data-titulo="Zona crossfit">
               <div class="galeria-img">
                 <img
                   src="../assets/crossfit.webp"
@@ -158,7 +158,7 @@
               </p>
             </div>
             <div class="galeria-item media">
-              <div class="galeria-img">
+              <div class="galeria-img" data-src="../assets/espacioboxeo.webp" data-titulo="Zona boxeo">
                 <img src="../assets/espacioboxeo.webp" alt="bolsas de boxeo" />
                 <div class="galeria-overlay">
                   <h3>Zona Boxeo</h3>
@@ -169,7 +169,7 @@
                 mejorar coordinación, potencia y resistencia.
               </p>
             </div>
-            <div class="galeria-item galeria-item-wide">
+            <div class="galeria-item galeria-item-wide" data-src="../assets/saunahidromasaje.webp" data-titulo="Sauna e hidromasajes">
               <div class="galeria-img">
                 <img
                   src="../assets/saunahidromasaje.webp"
@@ -187,6 +187,13 @@
           </div>
         </div>
       </section>
+      <div id="modal-galeria" class="modal-rutinas">
+  <div class="modal-contenido modal-img">
+    <button id="modal-galeria-cerrar" class="modal-cerrar">&times;</button>
+    <h3 id="modal-galeria-titulo"></h3>
+    <img id="modal-galeria-img" src="" alt="" />
+  </div>
+</div>
     </main>
     <footer class="footer footer-minimal">
       <div class="footer-lineas">
@@ -255,5 +262,6 @@
       integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
       crossorigin="anonymous"
     ></script>
+    <script src="../js/script/instalaciones.js"></script>
   </body>
 </html>

@@ -899,6 +899,20 @@ input[type=number]::-webkit-outer-spin-button {
     width: 80%;
   }
 }
+.modal-img {
+  max-width: 900px;
+  width: 90%;
+  max-height: 90vh;
+}
+.modal-img img {
+  width: 100%;
+  height: auto;
+  max-height: 65vh;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
 #calculadora {
   max-width: 520px;
   margin: 4rem auto;
@@ -1030,6 +1044,7 @@ input[type=number]::-webkit-outer-spin-button {
 .modal-rutinas {
   display: none;
   position: fixed;
+  overflow: hidden;
   inset: 0;
   background: rgba(0, 0, 0, 0.75);
   z-index: 9999;
@@ -1042,6 +1057,7 @@ input[type=number]::-webkit-outer-spin-button {
 .modal-rutinas .modal-contenido {
   background: var(--color-bg-card);
   border-radius: 28px;
+  overflow: hidden;
   padding: 2rem;
   max-width: 700px;
   width: 90%;

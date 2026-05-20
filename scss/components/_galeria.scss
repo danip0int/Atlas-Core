@@ -1,0 +1,17 @@
+@use "../base/variables" as *;
+@use "../utils/mixins" as *;
+
+.modal-img {
+  max-width: 900px;
+  width: 90%;
+  max-height: 90vh;
+
+  img {
+    width: 100%;
+    height: auto;
+    max-height: 65vh;
+    object-fit: contain;
+    border-radius: $radius-sm;
+    margin-top: 1rem;
+  }
+}
