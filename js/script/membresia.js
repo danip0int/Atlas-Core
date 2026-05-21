@@ -97,7 +97,6 @@ try{
    if (campoNombre === "" || campoApellido === "" || campoDNI === "" || campoMail === "" || campoTel === "" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(campoMail) || selectPago.value === "") {
     throw new Error("Completá todos los campos correctamente"); 
 }
-console.log(eleccionPago);
 if (eleccionPago === "credito" || eleccionPago === "debito") {
     if (campotitular === "" || campotarjeta === "" || campoVencimientoVal === "" || campoDomicilioVal === "" ) {
         throw new Error("Los datos ingresados no son válidos. Intente nuevamente.");

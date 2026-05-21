@@ -95,7 +95,6 @@ async function mostrarRutinas(categoria) {
         });
 
         modalRutinas.classList.add("visible");
-        console.log(filtradas);
 
     } catch(error){
 

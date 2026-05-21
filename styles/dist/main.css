@@ -28,7 +28,7 @@ html::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: url("/assets/noise2.png");
+  background-image: url("../../assets/noise.png");
   background-repeat: repeat;
   opacity: 0.25;
   pointer-events: none;
@@ -913,6 +913,81 @@ input[type=number]::-webkit-outer-spin-button {
   margin-top: 1rem;
 }
 
+.modal-nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.modal-nav img {
+  width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.btn-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--color-text-main);
+  font-size: 1.2rem;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.25s ease;
+}
+.btn-nav:hover {
+  background: var(--color-accent);
+}
+.btn-nav#btn-anterior {
+  left: 0.5rem;
+}
+.btn-nav#btn-siguiente {
+  right: 0.5rem;
+}
+
+/*RESPONSIVE*/
+@media (max-width: 992px) {
+  .modal-img {
+    width: 95%;
+    max-height: 85vh;
+  }
+  .modal-nav {
+    gap: 0.5rem;
+  }
+  .modal-nav img {
+    max-height: 55vh;
+  }
+  .btn-nav {
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 576px) {
+  .modal-img {
+    width: 100%;
+    max-height: 80vh;
+    padding: 1rem;
+  }
+  .modal-nav {
+    gap: 0.25rem;
+  }
+  .modal-nav img {
+    max-height: 45vh;
+  }
+  .btn-nav {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+}
 #calculadora {
   max-width: 520px;
   margin: 4rem auto;
@@ -1057,7 +1132,6 @@ input[type=number]::-webkit-outer-spin-button {
 .modal-rutinas .modal-contenido {
   background: var(--color-bg-card);
   border-radius: 28px;
-  overflow: hidden;
   padding: 2rem;
   max-width: 700px;
   width: 90%;
