@@ -16,7 +16,13 @@
   #estado-gym {
     padding: 1rem 1.5rem;
     border-radius: $radius-sm;
-    background: var(--color-bg-soft);
+    background: linear-gradient(
+  180deg,
+  rgba(64, 61, 57, 0.55) 0%,
+  rgba(58, 53, 49, 0.45) 100%
+);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
     border-left: 3px solid var(--color-accent);
     font-size: 0.95rem;
     color: var(--color-text-main);
@@ -25,7 +31,13 @@
 
 #tabla-horarios {
   margin-top: 1.5rem;
-  background: var(--color-bg-soft);
+  background: linear-gradient(
+  180deg,
+  rgba(64, 61, 57, 0.45) 0%,
+  rgba(58, 53, 49, 0.35) 100%
+);
+backdrop-filter: blur(8px);
+-webkit-backdrop-filter: blur(8px);
   border-radius: $radius-md;
   padding: 1rem 2rem 0.5rem;
   border: 1px solid rgba(255, 255, 255, 0.07);

@@ -5,7 +5,14 @@
   flex-direction: column;
   position: relative;
   height: 520px;
-  background: linear-gradient(180deg, var(--color-bg-card) 0%, #3a3531 100%);
+  background: linear-gradient(
+  180deg,
+  rgba(64, 61, 57, 0.15) 0%,
+  rgba(58, 53, 49, 0.15) 100%
+);
+backdrop-filter: blur(2px);
+-webkit-backdrop-filter: blur(2px);
+border: 1px solid rgba(255, 255, 255, 0.02);
   color: var(--color-text-main);
   border-radius: 22px;
   overflow: hidden;

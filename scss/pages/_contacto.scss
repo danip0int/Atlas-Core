@@ -11,7 +11,13 @@
     margin: auto;
     border-radius: 28px;
     overflow: hidden;
-    background: linear-gradient(180deg, var(--color-bg-card) 0%, #3a3531 100%);
+    background: linear-gradient(
+  180deg,
+  rgba(64, 61, 57, 0.45) 0%,
+  rgba(58, 53, 49, 0.35) 100%
+);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
     box-shadow: 0 40px 80px rgba(0, 0, 0, 0.45);
 
     &-form {

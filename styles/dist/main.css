@@ -86,6 +86,7 @@ input[type=number]::-webkit-outer-spin-button {
   --color-text-main: var(--floral-white);
   --color-text-muted: var(--dust-grey);
   --color-overlay-dark: rgba(37, 36, 34, 0.45);
+  --color-bg-card-rgb: 64, 61, 57;
   --color-accent: var(--spicy-paprika);
 }
 
@@ -635,7 +636,10 @@ input[type=number]::-webkit-outer-spin-button {
   flex-direction: column;
   position: relative;
   height: 520px;
-  background: linear-gradient(180deg, var(--color-bg-card) 0%, #3a3531 100%);
+  background: linear-gradient(180deg, rgba(64, 61, 57, 0.15) 0%, rgba(58, 53, 49, 0.15) 100%);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.02);
   color: var(--color-text-main);
   border-radius: 22px;
   overflow: hidden;
@@ -855,7 +859,7 @@ input[type=number]::-webkit-outer-spin-button {
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 2rem 2.5rem;
@@ -993,7 +997,9 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 4rem auto;
   padding: 2.5rem;
   overflow: hidden;
-  background: var(--color-bg-card);
+  background: linear-gradient(180deg, rgba(64, 61, 57, 0.4) 0%, rgba(58, 53, 49, 0.3) 100%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-radius: 28px;
   border: 1px solid rgba(255, 255, 255, 0.07);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
@@ -1130,7 +1136,10 @@ input[type=number]::-webkit-outer-spin-button {
   display: flex;
 }
 .modal-rutinas .modal-contenido {
-  background: var(--color-bg-card);
+  background: rgba(var(--color-bg-card-rgb), 0.45);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 28px;
   padding: 2rem;
   max-width: 700px;
@@ -1142,6 +1151,8 @@ input[type=number]::-webkit-outer-spin-button {
 .modal-rutinas .modal-contenido h3 {
   margin-bottom: 1.5rem;
   color: var(--color-text-main);
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--color-accent);
 }
 .modal-rutinas .modal-cerrar {
   position: absolute;
@@ -1168,7 +1179,9 @@ input[type=number]::-webkit-outer-spin-button {
   right: -380px;
   width: 360px;
   height: 100vh;
-  background: var(--color-bg-card);
+  background: linear-gradient(180deg, rgba(64, 61, 57, 0.55) 0%, rgba(58, 53, 49, 0.45) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-left: 1px solid rgba(255, 255, 255, 0.1);
   padding: 2rem 1.5rem;
   z-index: 9998;
@@ -1294,7 +1307,9 @@ input[type=number]::-webkit-outer-spin-button {
 #horarios #estado-gym {
   padding: 1rem 1.5rem;
   border-radius: 8px;
-  background: var(--color-bg-soft);
+  background: linear-gradient(180deg, rgba(64, 61, 57, 0.55) 0%, rgba(58, 53, 49, 0.45) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-left: 3px solid var(--color-accent);
   font-size: 0.95rem;
   color: var(--color-text-main);
@@ -1302,7 +1317,9 @@ input[type=number]::-webkit-outer-spin-button {
 
 #tabla-horarios {
   margin-top: 1.5rem;
-  background: var(--color-bg-soft);
+  background: linear-gradient(180deg, rgba(64, 61, 57, 0.45) 0%, rgba(58, 53, 49, 0.35) 100%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-radius: 16px;
   padding: 1rem 2rem 0.5rem;
   border: 1px solid rgba(255, 255, 255, 0.07);
@@ -2224,7 +2241,9 @@ input[type=number]::-webkit-outer-spin-button {
   margin: auto;
   border-radius: 28px;
   overflow: hidden;
-  background: linear-gradient(180deg, var(--color-bg-card) 0%, #3a3531 100%);
+  background: linear-gradient(180deg, rgba(64, 61, 57, 0.45) 0%, rgba(58, 53, 49, 0.35) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 40px 80px rgba(0, 0, 0, 0.45);
 }
 .contacto-hero .contacto-form {
